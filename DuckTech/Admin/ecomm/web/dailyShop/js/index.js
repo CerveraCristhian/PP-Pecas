@@ -1,0 +1,78 @@
+var app = angular.module('categoriaApp', ['angular.filter']   );
+app.controller('categoriaController', function($scope, $http) {
+$scope.cate_nombre = null;
+$scope.cate_Activo = null;
+$scope.cate_fechacreacion = null;
+$scope.cate_fechamodificacion = null;
+$scope.cate_usuariocreacion = null;
+$scope.cate_usuariomodificacion = null;
+$scope.cate_categoriaid = null;
+$scope.categoria = [];
+$scope.productoid=null;
+$("#load").show();
+$http.post("../DataAccess/Servicios/categoria/ServiceCategoriaSubCategoria.php")
+.success(function(data) {
+$scope.categoria = data;
+})
+.error(function(error) {})
+
+    $scope.producto = [];
+    $http.post("../DataAccess/Servicios/producto/ServiceSelectAllproducto.php")
+        .success(function(data) {
+            $("#load").hide();
+            $scope.producto = data;
+        })
+        .error(function(error) {})
+
+
+$scope.OnCategoriaClic = function(data)
+{
+var parametros = {
+Categoria_cate_categoriaid :data.subc_subcategoriaid
+}
+
+    $scope.producto = [];
+    $("#load").show();
+    $http.post("../DataAccess/Servicios/producto/ServiceSelectAllProductobyCategoria.php",parametros)
+        .success(function(data) {
+            $scope.producto = data;
+            $("#load").hide();
+        })
+        .error(function(error) {})
+
+
+}
+
+
+
+$scope.OnClickProducto = function(data)
+{
+
+$scope.productoid = data.prod_productoid;
+
+ var parametros = {
+                idproducto: data.prod_productoid
+            }
+post("pass.php",parametros);
+
+}
+
+    function post(path, params, method) {
+        method = method || "post";
+        var form = document.createElement("form");
+        form.setAttribute("method", method);
+        form.setAttribute("action", path);
+        for (var key in params) {
+            if (params.hasOwnProperty(key)) {
+                var hiddenField = document.createElement("input");
+                hiddenField.setAttribute("type", "hidden");
+                hiddenField.setAttribute("name", key);
+                hiddenField.setAttribute("value", params[key]);
+                form.appendChild(hiddenField);
+            }
+        }
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+});
