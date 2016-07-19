@@ -1,5 +1,5 @@
-var app = angular.module('categoriaApp', ['angular.filter']   );
-app.controller('categoriaController', function($scope, $http) {
+var app = angular.module('categoriaApp', ['angular.filter','ng-mfb']   );
+app.controller('categoriaController', function($scope, $http,$window) {
 $scope.cate_nombre = null;
 $scope.cate_Activo = null;
 $scope.cate_fechacreacion = null;
@@ -32,11 +32,11 @@ Categoria_cate_categoriaid :data.subc_subcategoriaid
 }
 
     $scope.producto = [];
-    $("#load").show();
+
     $http.post("../DataAccess/Servicios/producto/ServiceSelectAllProductobyCategoria.php",parametros)
         .success(function(data) {
             $scope.producto = data;
-            $("#load").hide();
+       
         })
         .error(function(error) {})
 
@@ -55,6 +55,17 @@ $scope.productoid = data.prod_productoid;
             }
 post("pass.php",parametros);
 
+}
+
+$scope.Estatus = function(){
+
+
+$window.location.href = '/Git/PP-Pecas/DuckTech/Admin/dailyShop/cart.html';
+}
+
+$scope.Compra = function(){
+
+$window.location.href = '/Git/PP-Pecas/DuckTech/Admin/dailyShop/cart.html';
 }
 
     function post(path, params, method) {
@@ -76,3 +87,4 @@ post("pass.php",parametros);
     }
 
 });
+

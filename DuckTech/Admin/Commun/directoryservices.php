@@ -16,4 +16,7 @@ $wscontenidoweb ='../DataAccess/Servicios/contenidoweb/Servicecontenidoweb.php';
 $wsrolforma ="../DataAccess/Servicios/rolforma/ServiceRolesForma.php";
 $wsformas ='../DataAccess/Servicios/formas/Serviceformas.php';
 $wsmodulos ='../DataAccess/Servicios/modulos/Servicemodulos.php';
+$wsdetallesordencompra ='../DataAccess/Servicios/detallesordencompra/Servicedetallesordencompra.php';
+$wsordencompra ='../DataAccess/Servicios/ordencompra/Serviceordencompra.php';
+$wsusuariosweb ='../DataAccess/Servicios/usuariosweb/Serviceusuariosweb.php';
 ?>
