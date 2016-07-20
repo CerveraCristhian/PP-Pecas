@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="contenidowebApp" ng-controller="contenidowebController">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,9 +23,10 @@
      <!-- Theme color -->
     <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     <!-- Main Style -->
     <link href="style.css" rel="stylesheet">
-
+    <script type="text/javascript" src="assets/js/indexController.js"></script>
     <!-- Fonts -->
 
     <!-- Open Sans for body font -->
@@ -215,10 +216,10 @@
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/raomijaj-QM" frameborder="0" allowfullscreen></iframe>
                   </h1>
                   <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">
-                    Calidad superior de tinta y toner para impresora
+                    Calidad superior de tinta y toner para impresora 
                   </p>
                   <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">
-                    Más...
+                   {{Mision}}
                   </a>
                 </div>
               </div>
