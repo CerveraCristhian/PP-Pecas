@@ -305,6 +305,17 @@
     <script type="text/javascript" src="js/nouislider.js"></script>
     <!-- Custom js -->
     <script src="js/custom.js"></script>
+    <script type="text/javascript">
+    var altura = $('#menu-area').offset().top;
+
+    $(window).scroll(function(){
+      if ($(this).scrollTop() > altura) {
+        $('#menu-area').addClass('menu-fixed');
+      } else {
+        $('#menu-area').removeClass('menu-fixed');
+      }
+    });
+    </script>
 </body>
 
 </html>
