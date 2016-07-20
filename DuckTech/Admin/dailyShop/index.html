@@ -30,6 +30,7 @@
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -42,6 +43,7 @@
     <![endif]-->
 <link href="css/mfb.css" rel="stylesheet"/>
     <script src="js/mfb-directive.js"></script>
+
   </head>
   <body>
     <!-- wpf loader Two -->
@@ -83,10 +85,10 @@
                         <figure>
                           <a class="aa-product-img" href="#"><img src="{{model.prod_imagen}}" alt="polo shirt img" width="200px" height="200px"></a>
                           <br>
-                          <a class="aa-add-card-btn"href="#"><button class="btn btn-primary btn-xs fa fa-shopping-cart ">Add To Cart</button></a>
+                          <a class="aa-add-card-btn"href="#"><span class="btn btn-primary btn-xs fa fa-shopping-cart" ng-click="AddToCart(model)">Add To Cart</span></a>
                           <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{model.prod_nombre}}</a></h4>
-                          <span class="aa-product-price">{{model.prod_precioestandar}}</span>
+                          <span class="aa-product-price">$ {{model.prod_precioestandar}}</span>
                           </figcaption>
                           
                           
@@ -96,10 +98,10 @@
                         <figure>
                           <a class="aa-product-img" href="#"><img src="{{model.prod_imagen}}" alt="polo shirt img" width="200px" height="200px"></a>
                           <br>
-                          <a class="aa-add-card-btn"href="#"><button class="btn btn-primary btn-xs fa fa-shopping-cart ">Add To Cart</button></a>
+                          <a class="aa-add-card-btn"href="#"><span class="btn btn-primary btn-xs fa fa-shopping-cart ">Add To Cart</span></a>
                           <figcaption>
                           <h4 class="aa-product-title"><a href="#">{{model.prod_nombre}}</a></h4>
-                          <span class="aa-product-price">{{model.prod_precioestandar}}</span>
+                          <span class="aa-product-price">$ {{model.prod_precioestandar}}</span>
                           </figcaption>
                           
                           
@@ -117,8 +119,8 @@
       </section>
       <!-- / Products section -->
       <!-- / popular product category -->
-      
-      
+    {{$storage.x}}
+     
       <!-- footer -->
       
       <!-- / footer -->

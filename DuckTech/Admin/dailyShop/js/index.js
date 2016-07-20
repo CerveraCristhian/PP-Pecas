@@ -1,5 +1,7 @@
-var app = angular.module('categoriaApp', ['angular.filter','ng-mfb']   );
-app.controller('categoriaController', function($scope, $http,$window) {
+var app = angular.module('categoriaApp', ['angular.filter','ng-mfb','ngStorage']   );
+app.controller('categoriaController', function($scope, $http,$window,
+    $localStorage,
+    $sessionStorage) {
 $scope.cate_nombre = null;
 $scope.cate_Activo = null;
 $scope.cate_fechacreacion = null;
@@ -9,6 +11,10 @@ $scope.cate_usuariomodificacion = null;
 $scope.cate_categoriaid = null;
 $scope.categoria = [];
 $scope.productoid=null;
+$scope.$storage = $localStorage;
+ $scope.$storage = $localStorage.$default({
+          x: []
+        });
 $("#load").show();
 $http.post("../DataAccess/Servicios/categoria/ServiceCategoriaSubCategoria.php")
 .success(function(data) {
@@ -43,6 +49,14 @@ Categoria_cate_categoriaid :data.subc_subcategoriaid
 
 }
 
+
+$scope.AddToCart = function(data){
+
+
+$scope.$storage.x.push(data);
+
+
+}
 
 
 $scope.OnClickProducto = function(data)
