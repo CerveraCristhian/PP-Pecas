@@ -1045,6 +1045,142 @@ switch ($method) {
     echo Serviciosmodulos::SelectModulobyRol($objDatos);
     break;
 
+     //Metodos de detallesordencompra
+    /**
+    * selectdetallesordencompra
+    *
+    * Parametros de entrada: Ninguno
+    * Descripcion: Devuelve el total de las tuplas de la tabla detallesordencompra
+    * Devuelve : Lista de resultados de la consulta
+    */
+    case 'selectdetallesordencompra':
+    require $wsdetallesordencompra;
+    echo Serviciosdetallesordencompra::selectdetallesordencompra($objDatos);
+    break;
+    /**
+    * insertdetallesordencompra
+    *
+    * Parametros de entrada: $detoc_ordencompraid, $detoc_productoid, $detoc_preciounitario, $detoc_cantidad, $detoc_total
+    * Descripcion: Devuelve el total de las tuplas de la tabla detallesordencompra
+    * Devuelve : Devuelve estados de la consulta
+    */
+    case 'insertdetallesordencompra':
+    require $wsdetallesordencompra;
+    echo Serviciosdetallesordencompra::insertdetallesordencompra($objDatos);
+    break;
+    /**
+    * deletedetallesordencompra
+    *
+    * Parametros de entrada: $detoc_detalleordencompraid
+    * Descripcion: Devuelve el total de las tuplas de la tabla detallesordencompra
+    * Devuelve : Devuelve estados de la consulta
+    */
+    case 'deletedetallesordencompra':
+    require $wsdetallesordencompra;
+    echo Serviciosdetallesordencompra::deletedetallesordencompra($objDatos);
+    break;
+    /**
+    * updatedetallesordencompra
+    *
+    * Parametros de entrada: $detoc_ordencompraid, $detoc_productoid, $detoc_preciounitario, $detoc_cantidad, $detoc_total$detoc_detalleordencompraid
+    * Descripcion: Actualiza la tabla detallesordencompra
+    * Devuelve : Devuelve estados de la consulta
+    */
+    case 'updatedetallesordencompra':
+    require $wsdetallesordencompra;
+    echo Serviciosdetallesordencompra::updatedetallesordencompra($objDatos);
+    break;
+    //Metodos de ordencompra
+    /**
+    * selectordencompra
+    *
+    * Parametros de entrada: Ninguno
+    * Descripcion: Devuelve el total de las tuplas de la tabla ordencompra
+    * Devuelve : Lista de resultados de la consulta
+    */
+    case 'selectordencompra':
+    require $wsordencompra;
+    echo Serviciosordencompra::selectordencompra($objDatos);
+    break;
+    /**
+    * insertordencompra
+    *
+    * Parametros de entrada: $orco_usuariowebid, $orco_total, $orco_fecha, $orco_estatus
+    * Descripcion: Devuelve el total de las tuplas de la tabla ordencompra
+    * Devuelve : Devuelve estados de la consulta
+    */
+    case 'insertordencompra':
+    require $wsordencompra;
+    echo Serviciosordencompra::insertordencompra($objDatos);
+    break;
+    /**
+    * deleteordencompra
+    *
+    * Parametros de entrada: $orco_ordencompraid
+    * Descripcion: Devuelve el total de las tuplas de la tabla ordencompra
+    * Devuelve : Devuelve estados de la consulta
+    */
+    case 'deleteordencompra':
+    require $wsordencompra;
+    echo Serviciosordencompra::deleteordencompra($objDatos);
+    break;
+    /**
+    * updateordencompra
+    *
+    * Parametros de entrada: $orco_usuariowebid, $orco_total, $orco_fecha, $orco_estatus$orco_ordencompraid
+    * Descripcion: Actualiza la tabla ordencompra
+    * Devuelve : Devuelve estados de la consulta
+    */
+    case 'updateordencompra':
+    require $wsordencompra;
+    echo Serviciosordencompra::updateordencompra($objDatos);
+    break;
+    //Metodos de usuariosweb
+    /**
+    * selectusuariosweb
+    *
+    * Parametros de entrada: Ninguno
+    * Descripcion: Devuelve el total de las tuplas de la tabla usuariosweb
+    * Devuelve : Lista de resultados de la consulta
+    */
+    case 'selectusuariosweb':
+    require $wsusuariosweb;
+    echo Serviciosusuariosweb::selectusuariosweb($objDatos);
+    break;
+    /**
+    * insertusuariosweb
+    *
+    * Parametros de entrada: $usrw_nombre, $usrw_password, $usrw_rolid
+    * Descripcion: Devuelve el total de las tuplas de la tabla usuariosweb
+    * Devuelve : Devuelve estados de la consulta
+    */
+    case 'insertusuariosweb':
+    require $wsusuariosweb;
+    echo Serviciosusuariosweb::insertusuariosweb($objDatos);
+    break;
+    /**
+    * deleteusuariosweb
+    *
+    * Parametros de entrada: $usrw_usuarioid
+    * Descripcion: Devuelve el total de las tuplas de la tabla usuariosweb
+    * Devuelve : Devuelve estados de la consulta
+    */
+    case 'deleteusuariosweb':
+    require $wsusuariosweb;
+    echo Serviciosusuariosweb::deleteusuariosweb($objDatos);
+    break;
+    /**
+    * updateusuariosweb
+    *
+    * Parametros de entrada: $usrw_nombre, $usrw_password, $usrw_rolid$usrw_usuarioid
+    * Descripcion: Actualiza la tabla usuariosweb
+    * Devuelve : Devuelve estados de la consulta
+    */
+    case 'updateusuariosweb':
+    require $wsusuariosweb;
+    echo Serviciosusuariosweb::updateusuariosweb($objDatos);
+    break;
+
 
 	default:
 		# code...
