@@ -32,6 +32,15 @@ app.controller('categoriaController', function($scope, $http, $window,
         .error(function(error) {})
 
 
+        $scope.CargarTodos = function(){
+            $http.post("../DataAccess/Servicios/producto/ServiceSelectAllproducto.php")
+        .success(function(data) {
+            $("#load").hide();
+            $scope.producto = data;
+        })
+        .error(function(error) {})
+        }
+
     $scope.OnCategoriaClic = function(data) {
         var parametros = {
             Categoria_cate_categoriaid: data.subc_subcategoriaid
