@@ -228,6 +228,7 @@
         <button mfb-button icon="ion-bag" label="Revisar Carrito" ng-click="Compra()" ></button>
         <button mfb-button icon="ion-eye" label="Estatus de Compra" ng-click="Estatus()"></button>
     </nav>
+
     <section id="aa-product">
         <div class="container">
             <div class="row">
@@ -240,9 +241,11 @@
                                     <li class="active" ng-repeat="model in categoria.categoria"><a href="#men" data-toggle="tab" ng-click="OnCategoriaClic(model)">{{model.cate_nombre}}</a></li>
 
                                 </ul>
+                                <br>
+                                   <label for="filtro">Buscar: <input type="text" name="filtro" ng-model="test"></label>
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-sm-3" ng-repeat="model in producto.producto track by model.prod_productoid">
+                                        <div class="col-sm-3" ng-repeat="model in producto.producto | filter:test track by model.prod_productoid ">
                                             <figure>
                                                 <a class="aa-product-img" href="#"><img src="{{model.prod_imagen}}" alt="polo shirt img" width="200px" height="200px"></a>
                                                 <br>
@@ -259,19 +262,7 @@
 
                                             </figure>
                                         </div>
-                                        <div class="col-sm-3" ng-repeat="model in producto.producto track by model.prod_productoid">
-                                            <figure>
-                                                <a class="aa-product-img" href="#"><img src="{{model.prod_imagen}}" alt="polo shirt img" width="200px" height="200px"></a>
-                                                <br>
-                                                <a class="aa-add-card-btn" href="#"><span class="btn btn-primary btn-xs fa fa-shopping-cart ">Add To Cart</span></a>
-                                                <figcaption>
-                                                    <h4 class="aa-product-title"><a href="#">{{model.prod_nombre}}</a></h4>
-                                                    <span class="aa-product-price">$ {{model.prod_precioestandar}}</span>
-                                                </figcaption>
-
-
-                                            </figure>
-                                        </div>
+                                  
                                     </div>
 
                                 </div>
