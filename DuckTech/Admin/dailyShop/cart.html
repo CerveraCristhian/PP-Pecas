@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="cartApp" ng-controller="cartController">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +29,9 @@
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+    <script type="text/javascript" src="js/cart.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -357,39 +359,15 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
+                        <tr ng-repeat="model in productos"">
                         <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                        <td><a href="#"><img src="img/man/polo-shirt-1.png" alt="img"></a></td>
-                        <td><a class="aa-cart-title" href="#">Polo T-Shirt</a></td>
-                        <td>$250</td>
+                        <td><a href="#"><img src="{{model.prod_imagen}}" alt="img"></a></td>
+                        <td><a class="aa-cart-title" href="#">{{model.prod_nombre}}</a></td>
+                        <td>${{model.prod_precioestandar}}</td>
                         <td><input class="aa-cart-quantity" type="number" value="1"></td>
-                        <td>$250</td>
+                        <td>${{model.prod_precioestandar}}</td>
                       </tr>
-                      <tr>
-                        <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                        <td><a href="#"><img src="img/man/polo-shirt-2.png" alt="img"></a></td>
-                        <td><a class="aa-cart-title" href="#">Polo T-Shirt</a></td>
-                        <td>$150</td>
-                        <td><input class="aa-cart-quantity" type="number" value="1"></td>
-                        <td>$150</td>
-                      </tr>
-                      <tr>
-                        <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                        <td><a href="#"><img src="img/man/polo-shirt-3.png" alt="img"></a></td>
-                        <td><a class="aa-cart-title" href="#">Polo T-Shirt</a></td>
-                        <td>$50</td>
-                        <td><input class="aa-cart-quantity" type="number" value="1"></td>
-                        <td>$50</td>
-                      </tr>
-                      <tr>
-                        <td colspan="6" class="aa-cart-view-bottom">
-                          <div class="aa-cart-coupon">
-                            <input class="aa-coupon-code" type="text" placeholder="Coupon">
-                            <input class="aa-cart-view-btn" type="submit" value="Apply Coupon">
-                          </div>
-                          <input class="aa-cart-view-btn" type="submit" value="Update Cart">
-                        </td>
-                      </tr>
+                      
                       </tbody>
                   </table>
                 </div>
@@ -426,7 +404,8 @@
       <div class="row">
         <div class="col-md-12">
           <div class="aa-subscribe-area">
-            <h3>Subscribe our newsletter </h3>
+            <h3>
+ Subscribe our newsletter </h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, velit!</p>
             <form action="" class="aa-subscribe-form">
               <input type="email" name="" id="" placeholder="Enter your Email">
