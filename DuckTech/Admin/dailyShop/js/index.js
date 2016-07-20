@@ -11,6 +11,7 @@ app.controller('categoriaController', function($scope, $http, $window,
     $scope.cate_categoriaid = null;
     $scope.categoria = [];
     $scope.productoid = null;
+    $scope.productoSeleccionado = null;
     $scope.$storage = $localStorage;
     $scope.$storage = $localStorage.$default({
         x: []
@@ -61,6 +62,10 @@ app.controller('categoriaController', function($scope, $http, $window,
 
     }
 
+
+    $scope.productoDescripcion = function(data){
+            $scope.productoSeleccionado = data;
+    }
 
     $scope.OnClickProducto = function(data) {
 

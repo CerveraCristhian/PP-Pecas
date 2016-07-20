@@ -246,7 +246,11 @@
                                             <figure>
                                                 <a class="aa-product-img" href="#"><img src="{{model.prod_imagen}}" alt="polo shirt img" width="200px" height="200px"></a>
                                                 <br>
-                                                <a class="aa-add-card-btn" href="#"><span class="btn btn-primary btn-xs fa fa-shopping-cart" ng-click="AddToCart(model)">Add To Cart</span></a>
+                                                <a class="aa-add-card-btn" href="#"><span class="btn btn-primary btn-xs fa fa-shopping-cart" ng-click="AddToCart(model)">Add To Cart</span>
+
+                                                <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal" ng-click="productoDescripcion(model)">Descripcion</button>
+
+                                                </a>
                                                 <figcaption>
                                                     <h4 class="aa-product-title"><a href="#">{{model.prod_nombre}}</a></h4>
                                                     <span class="aa-product-price">$ {{model.prod_precioestandar}}</span>
@@ -280,6 +284,49 @@
     </section>
     <!-- / Products section -->
     <!-- / popular product category -->
+
+    <!--
+    Modal Productos
+    -->
+
+<!-- Trigger the modal with a button -->
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{productoSeleccionado.prod_nombre}}</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-xs-4">
+            <img src="{{productoSeleccionado.prod_imagen}}" width="200px" height="200px">
+          </div>
+          <div class="col-xs-8">
+            <label><span>Precio:</span> {{productoSeleccionado.prod_precioestandar}}</label>
+            <br>
+            <label><span>Descripción: </span> {{productoSeleccionado.prod_descripcion}}</label>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<span class="btn btn-primary fa fa-shopping-cart" ng-click="AddToCart(productoSeleccionado)" data-dismiss="modal">Add To Cart</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- /Modal Productos
+-->
 
     <!-- footer -->
     <!-- Start footer -->
