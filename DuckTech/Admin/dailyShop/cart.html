@@ -360,12 +360,12 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="model in productos"">
-                        <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
+                        <td><a class="remove" ng-click="DeleteFromCart($index)"><fa class="fa fa-close"></fa></a></td>
                         <td><a href="#"><img src="{{model.prod_imagen}}" alt="img"></a></td>
                         <td><a class="aa-cart-title" href="#">{{model.prod_nombre}}</a></td>
                         <td>${{model.prod_precioestandar}}</td>
-                        <td><input class="aa-cart-quantity" type="number" value="1"></td>
-                        <td>${{model.prod_precioestandar}}</td>
+                        <td><input class="aa-cart-quantity" type="number" value="1" ng-model="model.cantidad" ng-init="model.cantidad =1 | model.cantidad" ng-change="Change(model)"></td>
+                        <td>${{model.preciocalculado}}</td>
                       </tr>
                       
                       </tbody>
@@ -379,11 +379,11 @@
                  <tbody>
                    <tr>
                      <th>Subtotal</th>
-                     <td>$450</td>
+                     <td>${{subtotal}}</td>
                    </tr>
                    <tr>
                      <th>Total</th>
-                     <td>$450</td>
+                     <td>${{total}}</td>
                    </tr>
                  </tbody>
                </table>

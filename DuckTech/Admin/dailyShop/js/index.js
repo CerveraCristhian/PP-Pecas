@@ -52,7 +52,7 @@ Categoria_cate_categoriaid :data.subc_subcategoriaid
 
 $scope.AddToCart = function(data){
 
-
+data.cantidad =1;
 $scope.$storage.x.push(data);
 
 
