@@ -21,11 +21,11 @@ $scope.subtotal =0;
 SumarCarrito();
 function SumarCarrito()
 {
-
+$scope.total = 0;
+$scope.subtotal =0;
 $scope.productos.forEach(myFunction)
 }
 function myFunction(item, index) {
-
     if (item.cantidad == undefined)
     {
         item.cantidad =1;
@@ -41,6 +41,7 @@ function myFunction(item, index) {
 $scope.DeleteFromCart = function(index){
   
     $scope.productos.splice(index, 1);
+    SumarCarrito();
 }
 
 
