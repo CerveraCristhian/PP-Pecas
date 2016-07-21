@@ -12,15 +12,37 @@ class Meta
 function __construct()
 {
 }
+public static function Insertdetallesordencompra($detoc_ordencompraid, $detoc_productoid, $detoc_preciounitario, $detoc_cantidad, $detoc_total)
+{
+$consulta = "INSERT INTO detallesordencompra(detoc_ordencompraid, detoc_productoid, detoc_preciounitario, detoc_cantidad, detoc_total) values (?, ?, ?, ?, ?)";
+try {
+// Preparar sentencia
+$comando = Database::getInstance()->getDb()->prepare($consulta);
+// Ejecutar sentencia preparada
+$comando->execute(array($detoc_ordencompraid, $detoc_productoid, $detoc_preciounitario, $detoc_cantidad, $detoc_total));
+// Capturar primera fila del resultado
+return $comando->fetchAll(PDO::FETCH_ASSOC);
+
+} catch (PDOException $e) {
+// Aquí puedes clasificar el error dependiendo de la excepción
+// para presentarlo en la respuesta Json
+return -1;
+}
+}
+
 public static function Insertordencompra($orco_usuariowebid, $orco_total, $orco_fecha, $orco_estatus)
 {
 $consulta = "INSERT INTO ordencompra(orco_usuariowebid, orco_total, orco_fecha, orco_estatus) values (?, ?, ?, ?)";
+$consulta2 = 'Select @@identity as idlast';
+
 try {
 // Preparar sentencia
 $comando = Database::getInstance()->getDb()->prepare($consulta);
 // Ejecutar sentencia preparada
 $comando->execute(array($orco_usuariowebid, $orco_total, $orco_fecha, $orco_estatus));
 // Capturar primera fila del resultado
+$comando = Database::getInstance()->getDb()->prepare($consulta2);
+$comando -> execute();
 return $comando->fetchAll(PDO::FETCH_ASSOC);
 
 } catch (PDOException $e) {

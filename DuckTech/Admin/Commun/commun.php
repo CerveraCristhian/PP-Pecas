@@ -1180,6 +1180,10 @@ switch ($method) {
     require $wsusuariosweb;
     echo Serviciosusuariosweb::updateusuariosweb($objDatos);
     break;
+    case 'registerCart':
+    require $wsregistercart;
+    echo Serviciosordencompra::insertordencompra($objDatos);
+    break;
 
 
 	default:
