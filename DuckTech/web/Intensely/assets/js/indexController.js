@@ -14,7 +14,7 @@ $http.post("../../Admin/Commun/commun.php",parametros)
 .success(function (data)
 {
 $scope.contenidoweb = data;
-$scope.Mision = $scope.contenidoweb.contenidoweb[0].contw_descripcion;
+$scope.Mision = $scope.contenidoweb.contenidoweb;
 
 })
 .error(function (error)
