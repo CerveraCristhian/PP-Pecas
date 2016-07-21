@@ -278,8 +278,6 @@
  </section>
  <!-- / Cart view section -->
 
-
-
   <!-- footer -->
   <!-- Start footer -->
   <footer id="footer">
@@ -338,6 +336,11 @@
         $('#menu-area').removeClass('menu-fixed');
       }
     });
+    </script>
+    <script type="text/javascript">
+        (function() {
+            $('#footer').css('position', $(document).height() > $(window).height()+100 ? "absolute" : "fixed");
+        })();
     </script>
   </body>
 </html>

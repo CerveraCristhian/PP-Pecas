@@ -48,7 +48,7 @@
     <link href="style.css" rel="stylesheet">
     <!-- Main Style -->
     <link href="default-theme.css" rel="stylesheet">
-     <script src="../plugins/sweetalert-master/dist/sweetalert-dev.js"></script>
+    <script src="../plugins/sweetalert-master/dist/sweetalert-dev.js"></script>
     <link rel="stylesheet" href="../plugins/sweetalert-master/dist/sweetalert.css">
 </head>
 
@@ -68,150 +68,151 @@
 
     <!-- Start header -->
     <header id="header">
-      <!-- header top search -->
-      <div class="header-top">
-        <div class="container">
-          <form action="">
-            <div id="search">
-            <input type="text" placeholder="¿Que necesitas?" name="s" id="m_search" style="display: inline-block;">
-            <button type="submit">
-              <i class="fa fa-search"></i>
-            </button>
-          </div>
-          </form>
-        </div>
-      </div>
-      <!-- header bottom -->
-      <div class="header-bottom">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-6">
-              <div class="header-contact">
-                <ul>
-                  <li>
-                    <div class="phone">
-                      <i class="fa fa-phone"></i>
-                      +52 (477) 264-7260
+        <!-- header top search -->
+        <div class="header-top">
+            <div class="container">
+                <form action="">
+                    <div id="search">
+                        <input type="text" placeholder="¿Que necesitas?" name="s" id="m_search" style="display: inline-block;">
+                        <button type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
                     </div>
-                  </li>
-                  <li>
-                    <div class="mail">
-                      <i class="fa fa-envelope"></i>
-                      contacto@drucktech.com
-                    </div>
-                  </li>
-                </ul>
-              </div>
+                </form>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-6">
-              <div class="header-login">
-                <a class="login modal-form" data-target="#login-form" data-toggle="modal" href="#">Ingresa / Registro</a>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+        <!-- header bottom -->
+        <div class="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="header-contact">
+                            <ul>
+                                <li>
+                                    <div class="phone">
+                                        <i class="fa fa-phone"></i> +52 (477) 264-7260
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="mail">
+                                        <i class="fa fa-envelope"></i> contacto@drucktech.com
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="header-login">
+                            <a class="login modal-form" data-target="#login-form" data-toggle="modal" href="#">Ingresa / Registro</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <!-- End header -->
 
     <!-- Start login modal window -->
     <div aria-hidden="false" role="dialog" tabindex="-1" id="login-form" class="modal leread-modal fade in">
-      <div class="modal-dialog">
-        <!-- Start login section -->
-        <div id="login-content" class="modal-content">
-          <div class="modal-header">
-            <button aria-label="Close" data-dismiss="modal" class="close" type="button">
-              <span aria-hidden="true">×</span>
-            </button>
-            <h4 class="modal-title"><i class="fa fa-unlock-alt"></i>Ingresa</h4>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <input type="text" placeholder="E-mail" class="form-control">
-              </div>
-              <div class="form-group">
-                <input type="password" placeholder="Contraseña" class="form-control">
-              </div>
-               <div class="loginbox">
-                <label><input type="checkbox"><span>Recuerdame</span></label>
-                <button class="btn signin-btn" type="button">ENTRAR</button>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer footer-box">
-            <a href="#">¿Olvidaste la contraseña?</a>
-            <span>¿No tienes cuenta? <a id="signup-btn" href="#">Registrate.</a></span>
-          </div>
+        <div class="modal-dialog">
+            <!-- Start login section -->
+            <div id="login-content" class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" data-dismiss="modal" class="close" type="button">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title"><i class="fa fa-unlock-alt"></i>Ingresa</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="E-mail" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Contraseña" class="form-control">
+                        </div>
+                        <div class="loginbox">
+                            <label>
+                                <input type="checkbox"><span>Recuerdame</span></label>
+                            <button class="btn signin-btn" type="button">ENTRAR</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer footer-box">
+                    <a href="#">¿Olvidaste la contraseña?</a>
+                    <span>¿No tienes cuenta? <a id="signup-btn" href="#">Registrate.</a></span>
+                </div>
+            </div>
+            <!-- Start signup section -->
+            <div id="signup-content" class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title"><i class="fa fa-lock"></i>Registro</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <input placeholder="Name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input placeholder="Username" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input placeholder="Email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" class="form-control">
+                        </div>
+                        <div class="signupbox">
+                            <span>¿Ya tienes una cuenta? <a id="login-btn" href="#">Ingresa.</a></span>
+                        </div>
+                        <div class="loginbox">
+                            <label>
+                                <input type="checkbox"><span>Recuerdame</span><i class="fa"></i></label>
+                            <button class="btn signin-btn" type="button">Registrarse</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <!-- Start signup section -->
-        <div id="signup-content" class="modal-content">
-          <div class="modal-header">
-            <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span></button>
-            <h4 class="modal-title"><i class="fa fa-lock"></i>Registro</h4>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <input placeholder="Name" class="form-control">
-              </div>
-              <div class="form-group">
-                <input placeholder="Username" class="form-control">
-              </div>
-              <div class="form-group">
-                <input placeholder="Email" class="form-control">
-              </div>
-              <div class="form-group">
-                <input type="password" placeholder="Password" class="form-control">
-              </div>
-              <div class="signupbox">
-                <span>¿Ya tienes una cuenta? <a id="login-btn" href="#">Ingresa.</a></span>
-              </div>
-              <div class="loginbox">
-                <label><input type="checkbox"><span>Recuerdame</span><i class="fa"></i></label>
-                <button class="btn signin-btn" type="button">Registrarse</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
     </div>
     <!-- End login modal window -->
 
     <!-- BEGIN MENU -->
     <section id="menu-area">
-      <nav class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <!-- LOGO -->
-            <!-- TEXT BASED LOGO -->
-            <a class="navbar-brand" href="index.html">DruckTech</a>
-            <!-- IMG BASED LOGO  -->
-             <!-- <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="logo"></a> -->
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-              <li><a href="../../web/Intensely/index.html">Inicio</a></li>
-              <li><a href="../../web/Intensely/index.html#about" class="scroll">Acerca de</a></li>
-              <li><a href="../../web/Intensely/index.html#service" class="scroll">Servicios</a></li>
-              <li><a href="../../web/Intensely/index.html#feature" class="scroll">Marcas</a></li>
-              <li><a href="../../web/Intensely/index.html#contact" class="scroll">Contacto</a></li>
-              <li class="active"><a href="../../Admin/dailyShop/index.html">e-Commerce</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-          <a href="#" id="search-icon">
-            <i class="fa fa-search">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- LOGO -->
+                    <!-- TEXT BASED LOGO -->
+                    <a class="navbar-brand" href="index.html">DruckTech</a>
+                    <!-- IMG BASED LOGO  -->
+                    <!-- <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="logo"></a> -->
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
+                        <li><a href="../../web/Intensely/index.html">Inicio</a></li>
+                        <li><a href="../../web/Intensely/index.html#about" class="scroll">Acerca de</a></li>
+                        <li><a href="../../web/Intensely/index.html#service" class="scroll">Servicios</a></li>
+                        <li><a href="../../web/Intensely/index.html#feature" class="scroll">Marcas</a></li>
+                        <li><a href="../../web/Intensely/index.html#contact" class="scroll">Contacto</a></li>
+                        <li class="active"><a href="../../Admin/dailyShop/index.html">e-Commerce</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+                <a href="#" id="search-icon">
+                    <i class="fa fa-search">
             </i>
-          </a>
-        </div>
-      </nav>
+                </a>
+            </div>
+        </nav>
     </section>
     <!-- END MENU -->
 
@@ -225,7 +226,7 @@
 
     <!-- Products section -->
     <nav class="badge1" data-badge="6" mfb-menu position="br" effect="zoomin" label="Carrito de Compra" active-icon="ion-edit" resting-icon="ion-plus-round" toggling-method="click">
-        <button mfb-button icon="ion-bag" label="Revisar Carrito" ng-click="Compra()" ></button>
+        <button mfb-button icon="ion-bag" label="Revisar Carrito" ng-click="Compra()"></button>
         <button mfb-button icon="ion-eye" label="Estatus de Compra" ng-click="Estatus()"></button>
     </nav>
 
@@ -238,12 +239,14 @@
                             <div class="aa-product-inner">
                                 <!-- start prduct navigation -->
                                 <ul class="nav nav-tabs aa-products-tab">
-                                 <li class="active"><a data-toggle="tab" ng-click="CargarTodos()">All</a></li>
+                                    <li class="active"><a data-toggle="tab" ng-click="CargarTodos()">All</a></li>
                                     <li class="active" ng-repeat="model in categoria.categoria"><a href="#men" data-toggle="tab" ng-click="OnCategoriaClic(model)">{{model.cate_nombre}}</a></li>
 
                                 </ul>
                                 <br>
-                                   <label for="filtro">Buscar: <input type="text" name="filtro" ng-model="test"></label>
+                                <label for="filtro">Buscar:
+                                    <input type="text" name="filtro" ng-model="test">
+                                </label>
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-3" ng-repeat="model in producto.producto | filter:test track by model.prod_productoid ">
@@ -263,7 +266,7 @@
 
                                             </figure>
                                         </div>
-                                  
+
                                     </div>
 
                                 </div>
@@ -281,66 +284,67 @@
     Modal Productos
     -->
 
-<!-- Trigger the modal with a button -->
+    <!-- Trigger the modal with a button -->
 
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">{{productoSeleccionado.prod_nombre}}</h4>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-xs-4">
-            <img src="{{productoSeleccionado.prod_imagen}}" width="200px" height="200px">
-          </div>
-          <div class="col-xs-8">
-            <label><span>Precio:</span> {{productoSeleccionado.prod_precioestandar}}</label>
-            <br>
-            <label><span>Descripción: </span> {{productoSeleccionado.prod_descripcion}}</label>
-          </div>
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{productoSeleccionado.prod_nombre}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <img src="{{productoSeleccionado.prod_imagen}}" width="200px" height="200px">
+                        </div>
+                        <div class="col-xs-8">
+                            <label><span>Precio:</span> {{productoSeleccionado.prod_precioestandar}}</label>
+                            <br>
+                            <label><span>Descripción: </span> {{productoSeleccionado.prod_descripcion}}</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <span class="btn btn-primary fa fa-shopping-cart" ng-click="AddToCart(productoSeleccionado)" data-dismiss="modal">Add To Cart</span>
+                </div>
+            </div>
+
         </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-<span class="btn btn-primary fa fa-shopping-cart" ng-click="AddToCart(productoSeleccionado)" data-dismiss="modal">Add To Cart</span>
-      </div>
     </div>
 
-  </div>
-</div>
 
-
-<!-- /Modal Productos
+    <!-- /Modal Productos
 -->
 
     <!-- footer -->
+
     <!-- Start footer -->
     <footer id="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-sm-6">
-            <div class="footer-left">
-              <p></p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="footer-left">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="footer-right">
+                        <a href="index.html"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md-6 col-sm-6">
-            <div class="footer-right">
-              <a href="index.html"><i class="fa fa-facebook"></i></a>
-              <a href="#"><i class="fa fa-twitter"></i></a>
-              <a href="#"><i class="fa fa-google-plus"></i></a>
-              <a href="#"><i class="fa fa-linkedin"></i></a>
-              <a href="#"><i class="fa fa-pinterest"></i></a>
-            </div>
-          </div>
         </div>
-      </div>
     </footer>
     <!-- End footer -->
     <!-- / footer -->
@@ -367,15 +371,20 @@
     <!-- Custom js -->
     <script src="js/custom.js"></script>
     <script type="text/javascript">
-    var altura = $('#menu-area').offset().top;
-
-    $(window).scroll(function(){
-      if ($(this).scrollTop() > altura) {
-        $('#menu-area').addClass('menu-fixed');
-      } else {
-        $('#menu-area').removeClass('menu-fixed');
-      }
-    });
+        var altura = $('#menu-area').offset().top;
+        altura = altura +30;
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > altura) {
+                $('#menu-area').addClass('menu-fixed');
+            } else {
+                $('#menu-area').removeClass('menu-fixed');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        (function() {
+            $('#footer').css('position', $(document).height() > $(window).height() ? "absolute" : "fixed");
+        })();
     </script>
 </body>
 
