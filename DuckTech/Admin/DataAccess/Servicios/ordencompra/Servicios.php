@@ -68,6 +68,27 @@ return $comando->fetchAll(PDO::FETCH_ASSOC);
 return -1;
 }
 }
+
+
+public static function SelectOrdenCompraDesktop()
+{
+$consulta = "select a.orco_fecha as Fecha, b.usrw_nombre as Usuario, a.orco_total as Total from ordencompra as a join usuariosweb  as b on a.orco_usuariowebid = b.usrw_usuarioid";
+try {
+// Preparar sentencia
+$comando = Database::getInstance()->getDb()->prepare($consulta);
+// Ejecutar sentencia preparada
+$comando->execute();
+// Capturar primera fila del resultado
+return $comando->fetchAll(PDO::FETCH_ASSOC);
+
+} catch (PDOException $e) {
+// Aquí puedes clasificar el error dependiendo de la excepción
+// para presentarlo en la respuesta Json
+return -1;
+}
+}
+
+
 public static function Updateordencompra($orco_usuariowebid, $orco_total, $orco_fecha, $orco_estatus,$orco_ordencompraid)
 {
 $consulta = "UPDATE ordencompra SET orco_usuariowebid=?, orco_total=?, orco_fecha=?, orco_estatus=? where orco_ordencompraid= ?";
