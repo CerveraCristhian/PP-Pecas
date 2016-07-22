@@ -38,7 +38,6 @@ app.controller('cartController', function($scope, $http, $window,
     }
 
     $scope.DeleteFromCart = function(index) {
-
         $scope.productos.splice(index, 1);
         SumarCarrito();
     }
