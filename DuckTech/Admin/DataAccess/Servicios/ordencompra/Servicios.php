@@ -72,7 +72,7 @@ return -1;
 
 public static function SelectOrdenCompraDesktop()
 {
-$consulta = "select a.orco_fecha as Fecha, b.usrw_nombre as Usuario, a.orco_total as Total from ordencompra as a join usuariosweb  as b on a.orco_usuariowebid = b.usrw_usuarioid";
+$consulta = "select a.orco_ordencompraid as ID, a.orco_fecha as Fecha,  b.usrw_nombre as Usuario, a.orco_total as Total, a.orco_estatus as Estatus from ordencompra as a join usuariosweb  as b on a.orco_usuariowebid = b.usrw_usuarioid";
 try {
 // Preparar sentencia
 $comando = Database::getInstance()->getDb()->prepare($consulta);

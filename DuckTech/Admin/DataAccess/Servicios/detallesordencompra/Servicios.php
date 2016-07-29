@@ -5,7 +5,7 @@
 * almacenadas en la base de datos
 */
 define('DS',DIRECTORY_SEPARATOR);
-require_once $_SERVER["DOCUMENT_ROOT"].'/'.'taxisdos/Admin/DataAccess/Database.php';
+require_once $_SERVER["DOCUMENT_ROOT"].'/'.'Git/testCom/DuckTech/Admin/DataAccess/Database.php';
 class Meta
 {
 
@@ -29,6 +29,30 @@ return $comando->fetchAll(PDO::FETCH_ASSOC);
 return -1;
 }
 }
+
+
+
+
+
+public static function SelectDetallesOrdenCompraByOrdenCompraID($detoc_ordencompraid)
+{
+$consulta = "select b.detoc_detalleordencompraid as ID, c.prod_nombre as Nombre, b.detoc_cantidad as PZAS, b.detoc_preciounitario as PrecioUnitario, b.detoc_total as Total from ordencompra as a join detallesordencompra as b on (a.orco_ordencompraid = b.detoc_ordencompraid)  join producto as c on (b.detoc_productoid = c.prod_productoid) where a.orco_ordencompraid = ?";
+try {
+// Preparar sentencia
+$comando = Database::getInstance()->getDb()->prepare($consulta);
+// Ejecutar sentencia preparada
+$comando->execute(array($detoc_ordencompraid));
+// Capturar primera fila del resultado
+return $comando->fetchAll(PDO::FETCH_ASSOC);
+
+} catch (PDOException $e) {
+// Aquí puedes clasificar el error dependiendo de la excepción
+// para presentarlo en la respuesta Json
+return $e;
+}
+}
+
+
 public static function SelectAlldetallesordencompra()
 {
 $consulta = "SELECT * FROM detallesordencompra";
