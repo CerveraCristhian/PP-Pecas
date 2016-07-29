@@ -60,16 +60,13 @@ $mail->Username = "st.buendia@gmail.com";
 $mail->Password = "topollono09";
 
 //Set who the message is to be sent from
-$mail->setFrom('st.buendia@gmail.com', 'First Last');
-
-//Set an alternative reply-to address
-$mail->addReplyTo('st.buendia@gmail.com', 'First Last');
+$mail->setFrom('st.buendia@gmail.com', 'Eduardo Barron');
 
 //Set who the message is to be sent to
-$mail->addAddress('st.buendia@gmail.com', 'John Doe');
+$mail->addAddress('st.buendia@gmail.com', 'Eduardo');
 
 //Set the subject line
-$mail->Subject = 'PHPMailer GMail SMTP test';
+$mail->Subject = 'Nuevo Usuario registrado';
 
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
@@ -79,7 +76,7 @@ $mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
 $mail->AltBody = 'This is a plain-text message body';
 
 //Attach an image file
-$mail->addAttachment('phpmailer_mini.png');
+$mail->addAttachment($archivador);
 
 //send the message, check for errors
 if (!$mail->send()) {

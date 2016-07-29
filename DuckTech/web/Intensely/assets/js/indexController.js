@@ -21,6 +21,7 @@ app.controller('contenidowebController', function($scope, $http) {
 
 
     $scope.Registro = function() {
+      $('#login-form').modal('hide');
       uploadAjax();
       var parametros = {
           usrw_nombre: $scope.reg_email,
@@ -30,9 +31,11 @@ app.controller('contenidowebController', function($scope, $http) {
       }
       $http.post("../../Admin/Commun/commun.php", parametros)
           .success(function(data) {
-              swal("¡Registro Guardado!", "¡Registro guardado correctamente!", "success")
+              swal("¡Registro Guardado!", "¡Registro guardado correctamente! Ahora solo espera la confirmacion por email", "success")
           })
-          .error(function(error) {})
+          .error(function(error) {
+            swal("Oops...", "Something went wrong!", "error")
+          })
     }
 
     function uploadAjax() {
@@ -52,7 +55,7 @@ app.controller('contenidowebController', function($scope, $http) {
             cache: false
         }).done(function(data){
         	if(data.ok){
-            alert("se subio con exito");
+            //alert("se subio con exito");
         		console.log("se subio con exito")
         	}else {
         		alert(data.msg)
