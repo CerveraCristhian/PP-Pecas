@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="contenidowebApp" ng-controller="contenidowebController">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>DruckTech : Home</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/icon" href="assets/images/favicon.ico"/>
+    <link rel="shortcut icon" type="image/icon" href="assets/images/favicon.ico" />
     <!-- Font Awesome -->
     <link href="assets/css/font-awesome.css" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!-- Slick slider -->
-    <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
     <!-- Fancybox slider -->
     <link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="screen" />
     <!-- Animate css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css" />
     <!-- Progress bar  -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-progressbar-3.3.4.css"/>
-     <!-- Theme color -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-progressbar-3.3.4.css" />
+    <!-- Theme color -->
     <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     <!-- Main Style -->
     <link href="style.css" rel="stylesheet">
     <script type="text/javascript" src="assets/js/indexController.js"></script>
@@ -40,666 +41,678 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
 
-  <!-- BEGAIN PRELOADER -->
-  <div id="preloader">
-    <div id="status">&nbsp;</div>
-  </div>
-  <!-- END PRELOADER -->
 
-  <!-- SCROLL TOP BUTTON -->
-  <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
-  <!-- END SCROLL TOP BUTTON -->
+    <!-- This is what you need -->
+    <script src="../../Admin/plugins/sweetalert-master/dist/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="../../Admin/plugins/sweetalert-master/dist/sweetalert.css">
+</head>
 
-  <!-- Start header -->
-  <header id="header">
-    <!-- header top search -->
-    <div class="header-top">
-      <div class="container">
-        <form action="">
-          <div id="search">
-          <input type="text" placeholder="¿Que necesitas?" name="s" id="m_search" style="display: inline-block;">
-          <button type="submit">
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
-        </form>
-      </div>
+<body>
+
+    <!-- BEGAIN PRELOADER -->
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
     </div>
-    <!-- header bottom -->
-    <div class="header-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-sm-6 col-xs-6">
-            <div class="header-contact">
-              <ul>
-                <li>
-                  <div class="phone">
-                    <i class="fa fa-phone"></i>
-                    {{Mision[1].contw_descripcion}}
-                  </div>
-                </li>
-                <li>
-                  <div class="mail">
-                    <i class="fa fa-envelope"></i>
-                    {{Mision[36].contw_descripcion}}
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-sm-6 col-xs-6">
-            <div class="header-login">
-              <a class="login modal-form" data-target="#login-form" data-toggle="modal" href="#">{{Mision[2].contw_descripcion}}</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- End header -->
+    <!-- END PRELOADER -->
 
-  <!-- Start login modal window -->
-  <div aria-hidden="false" role="dialog" tabindex="-1" id="login-form" class="modal leread-modal fade in">
-    <div class="modal-dialog">
-      <!-- Start login section -->
-      <div id="login-content" class="modal-content">
-        <div class="modal-header">
-          <button aria-label="Close" data-dismiss="modal" class="close" type="button">
-            <span aria-hidden="true">×</span>
-          </button>
-          <h4 class="modal-title"><i class="fa fa-unlock-alt"></i>Ingresa</h4>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <input type="text" placeholder="E-mail" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Contraseña" class="form-control">
-            </div>
-             <div class="loginbox">
-              <label><input type="checkbox"><span>Recuerdame</span></label>
-              <button class="btn signin-btn" type="button">ENTRAR</button>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer footer-box">
-          <a href="#">¿Olvidaste la contraseña?</a>
-          <span>¿No tienes cuenta? <a id="signup-btn" href="#">Registrate.</a></span>
-        </div>
-      </div>
-      <!-- Start signup section -->
-      <div id="signup-content" class="modal-content">
-        <div class="modal-header">
-          <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span></button>
-          <h4 class="modal-title"><i class="fa fa-lock"></i>Registro</h4>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <input placeholder="Name" class="form-control">
-            </div>
-            <div class="form-group">
-              <input placeholder="Username" class="form-control">
-            </div>
-            <div class="form-group">
-              <input placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <div class="signupbox">
-              <span>¿Ya tienes una cuenta? <a id="login-btn" href="#">Ingresa.</a></span>
-            </div>
-            <div class="loginbox">
-              <label><input type="checkbox"><span>Recuerdame</span><i class="fa"></i></label>
-              <button class="btn signin-btn" type="button">Registrarse</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End login modal window -->
+    <!-- SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+    <!-- END SCROLL TOP BUTTON -->
 
-  <!-- BEGIN MENU -->
-  <section id="menu-area">
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- LOGO -->
-          <!-- TEXT BASED LOGO -->
-          <a class="navbar-brand" href="index.html">DruckTech</a>
-          <!-- IMG BASED LOGO  -->
-           <!-- <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="logo"></a> -->
+    <!-- Start header -->
+    <header id="header">
+        <!-- header top search -->
+        <div class="header-top">
+            <div class="container">
+                <form action="">
+                    <div id="search">
+                        <input type="text" placeholder="¿Que necesitas?" name="s" id="m_search" style="display: inline-block;">
+                        <button type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-            <li class="active"><a href="index.html">{{Mision[3].contw_descripcion}}</a></li>
-            <li><a href="#about" class="scroll">{{Mision[4].contw_descripcion}}</a></li>
-            <li><a href="#service" class="scroll">{{Mision[5].contw_descripcion}}</a></li>
-            <li><a href="#feature" class="scroll">{{Mision[6].contw_descripcion}}</a></li>
-            <li><a href="#contact" class="scroll">{{Mision[7].contw_descripcion}}</a></li>
-            <li><a href="../../Admin/dailyShop/index.html">{{Mision[8].contw_descripcion}}</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-        <a href="#" id="search-icon">
-          <i class="fa fa-search">
+        <!-- header bottom -->
+        <div class="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="header-contact">
+                            <ul>
+                                <li>
+                                    <div class="phone">
+                                        <i class="fa fa-phone"></i> {{Mision[1].contw_descripcion}}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="mail">
+                                        <i class="fa fa-envelope"></i> {{Mision[36].contw_descripcion}}
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="header-login">
+                            <a class="login modal-form" data-target="#login-form" data-toggle="modal" href="#">{{Mision[2].contw_descripcion}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End header -->
+
+    <!-- Start login modal window -->
+    <div aria-hidden="false" role="dialog" tabindex="-1" id="login-form" class="modal leread-modal fade in">
+        <div class="modal-dialog">
+            <!-- Start login section -->
+            <div id="login-content" class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" data-dismiss="modal" class="close" type="button">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title"><i class="fa fa-unlock-alt"></i>Ingresa</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="E-mail" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Contraseña" class="form-control">
+                        </div>
+                        <div class="loginbox">
+                            <button class="btn signin-btn" type="button">ENTRAR</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer footer-box">
+                    <a href="#">¿Olvidaste la contraseña?</a>
+                    <span>¿No tienes cuenta? <a id="signup-btn" href="#">Registrate.</a></span>
+                </div>
+            </div>
+            <!-- Start signup section -->
+            <div id="signup-content" class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title"><i class="fa fa-lock"></i>Registro</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm" >
+                        <div class="form-group">
+                            <input id="email" name="email" placeholder="Email" type="email" class="form-control" ng-model="reg_email" required>
+                        </div>
+                        <div class="form-group">
+                            <input id="pass1" name="pass1" type="password" placeholder="Password" class="form-control" ng-model="reg_pass1" required>
+                        </div>
+                        <div class="form-group">
+                            <input id="pass2" name="pass2" type="password" placeholder="Confirm Password" class="form-control" ng-model="reg_pass2" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Alta de hacienda</label>
+                            <input id="alta" name="alta" type="file" class="form-control" required>
+                        </div>
+                        <div class="signupbox">
+                            <span>¿Ya tienes una cuenta? <a id="login-btn" href="#">Ingresa.</a></span>
+                        </div>
+                        <div class="loginbox">
+                            <button class="btn signin-btn" type="button" ng-click="Registro()">Registrarse</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End login modal window -->
+
+    <!-- BEGIN MENU -->
+    <section id="menu-area">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- LOGO -->
+                    <!-- TEXT BASED LOGO -->
+                    <a class="navbar-brand" href="index.html">DruckTech</a>
+                    <!-- IMG BASED LOGO  -->
+                    <!-- <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="logo"></a> -->
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
+                        <li class="active"><a href="index.html">{{Mision[3].contw_descripcion}}</a></li>
+                        <li><a href="#about" class="scroll">{{Mision[4].contw_descripcion}}</a></li>
+                        <li><a href="#service" class="scroll">{{Mision[5].contw_descripcion}}</a></li>
+                        <li><a href="#feature" class="scroll">{{Mision[6].contw_descripcion}}</a></li>
+                        <li><a href="#contact" class="scroll">{{Mision[7].contw_descripcion}}</a></li>
+                        <li><a href="../../Admin/dailyShop/index.html">{{Mision[8].contw_descripcion}}</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+                <a href="#" id="search-icon">
+                    <i class="fa fa-search">
           </i>
-        </a>
-      </div>
-    </nav>
-  </section>
-  <!-- END MENU -->
+                </a>
+            </div>
+        </nav>
+    </section>
+    <!-- END MENU -->
 
-  <!-- Start slider -->
-  <section id="slider">
-    <div class="main-slider">
-      <div class="single-slide">
-        <img src="assets/images/slider-1.jpg" alt="img">
-        <div class="slide-content">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <div class="slide-article">
-                  <h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
+    <!-- Start slider -->
+    <section id="slider">
+        <div class="main-slider">
+            <div class="single-slide">
+                <img src="assets/images/slider-1.jpg" alt="img">
+                <div class="slide-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="slide-article">
+                                    <h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/raomijaj-QM" frameborder="0" allowfullscreen></iframe>
                   </h1>
-                  <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">
-                    Calidad superior de tinta y toner para impresora
-                  </p>
-                  <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">
+                                    <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">
+                                        Calidad superior de tinta y toner para impresora
+                                    </p>
+                                    <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">
                    {{Mision[0].contw_descripcion}}
                   </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="slider-img wow fadeInUp">
+                                    <img src="assets/images/mascota.png" alt="business man">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <div class="slider-img wow fadeInUp">
-                  <img src="assets/images/mascota.png" alt="business man">
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="single-slide">
-        <img src="assets/images/slider-3.jpg" alt="img">
-        <div class="slide-content">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <div class="slide-article">
-                  <h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
+            <div class="single-slide">
+                <img src="assets/images/slider-3.jpg" alt="img">
+                <div class="slide-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="slide-article">
+                                    <h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/raomijaj-QM" frameborder="0" allowfullscreen></iframe>
                   </h1>
-                  <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">
-                    Calidad superior de tinta y toner para impresora
-                  </p>
-                  <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">
+                                    <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">
+                                        Calidad superior de tinta y toner para impresora
+                                    </p>
+                                    <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">
                     Más...
                   </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="slider-img wow fadeInUp">
+                                    <img src="assets/images/logopng.png" alt="business man">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <div class="slider-img wow fadeInUp">
-                  <img src="assets/images/logopng.png" alt="business man">
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- End slider -->
+    </section>
+    <!-- End slider -->
 
-  <!-- Start about  -->
-  <section id="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="title-area">
-            <h2 class="title">{{Mision[4].contw_descripcion}}</h2>
-            <span class="line"></span>
-            <p>
-              {{Mision[9].contw_descripcion}}
-            </p>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="about-content">
+    <!-- Start about  -->
+    <section id="about">
+        <div class="container">
             <div class="row">
-              <div class="col-md-6">
-                <div class="our-skill">
-                  <h3>{{Mision[10].contw_descripcion}}</h3>
-                  <div class="our-skill-content">
-                  <p>
-                    {{Mision[11].contw_descripcion}}
-                  </p>
-                    <div class="progress">
-                      <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="100">
-                        <span class="progress-title">{{Mision[12].contw_descripcion}}</span>
-                      </div>
-                  </div>
-                  <div class="progress">
-                      <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="100">
-                        <span class="progress-title">{{Mision[13].contw_descripcion}}</span>
-                      </div>
-                  </div>
-                  <div class="progress">
-                      <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="100">
-                        <span class="progress-title">{{Mision[14].contw_descripcion}}</span>
-                      </div>
-                  </div>
-                  <div class="progress">
-                      <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="100">
-                        <span class="progress-title">{{Mision[15].contw_descripcion}}</span>
-                      </div>
-                  </div>
-                  <div class="progress">
-                      <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="100">
-                        <span class="progress-title">{{Mision[16].contw_descripcion}}</span>
-                      </div>
-                  </div>
-
-                  </div>
+                <div class="col-md-12">
+                    <div class="title-area">
+                        <h2 class="title">{{Mision[4].contw_descripcion}}</h2>
+                        <span class="line"></span>
+                        <p>
+                            {{Mision[9].contw_descripcion}}
+                        </p>
+                    </div>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <div class="why-choose-us">
-                  <h3>{{Mision[17].contw_descripcion}}</h3>
-                  <div class="panel-group why-choose-group" id="accordion">
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h4 class="panel-title">
+                <div class="col-md-12">
+                    <div class="about-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="our-skill">
+                                    <h3>{{Mision[10].contw_descripcion}}</h3>
+                                    <div class="our-skill-content">
+                                        <p>
+                                            {{Mision[11].contw_descripcion}}
+                                        </p>
+                                        <div class="progress">
+                                            <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="100">
+                                                <span class="progress-title">{{Mision[12].contw_descripcion}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="100">
+                                                <span class="progress-title">{{Mision[13].contw_descripcion}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="100">
+                                                <span class="progress-title">{{Mision[14].contw_descripcion}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="100">
+                                                <span class="progress-title">{{Mision[15].contw_descripcion}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="100">
+                                                <span class="progress-title">{{Mision[16].contw_descripcion}}</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="why-choose-us">
+                                    <h3>{{Mision[17].contw_descripcion}}</h3>
+                                    <div class="panel-group why-choose-group" id="accordion">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
                           <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                             {{Mision[18].contw_descripcion}}<span class="fa fa-minus-square"></span>
                           </a>
                         </h4>
-                      </div>
-                      <div id="collapseOne" class="panel-collapse collapse in">
-                        <div class="panel-body">
-                        <img class="why-choose-img" src="assets/images/testi1.jpg" alt="img">
-                         <p>
-                          {{Mision[19].contw_descripcion}}
-                         </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="panel panel-default ">
-                      <div class="panel-heading">
-                        <h4 class="panel-title">
+                                            </div>
+                                            <div id="collapseOne" class="panel-collapse collapse in">
+                                                <div class="panel-body">
+                                                    <img class="why-choose-img" src="assets/images/testi1.jpg" alt="img">
+                                                    <p>
+                                                        {{Mision[19].contw_descripcion}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default ">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
                           <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
                             {{Mision[20].contw_descripcion}}<span class="fa fa-plus-square"></span>
                           </a>
                         </h4>
-                      </div>
-                      <div id="collapseTwo" class="panel-collapse collapse">
-                        <div class="panel-body">
-                         <p>
-                           {{Mision[21].contw_descripcion}}
-                         </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h4 class="panel-title">
+                                            </div>
+                                            <div id="collapseTwo" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <p>
+                                                        {{Mision[21].contw_descripcion}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
                           <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
                             {{Mision[22].contw_descripcion}} <span class="fa fa-plus-square"></span>
                           </a>
                         </h4>
-                      </div>
-                      <div id="collapseThree" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <p>
-                            {{Mision[23].contw_descripcion}}
-                          </p>
+                                            </div>
+                                            <div id="collapseThree" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <p>
+                                                        {{Mision[23].contw_descripcion}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                      </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- end about -->
+    </section>
+    <!-- end about -->
 
-  <!-- Start Service -->
-  <section id="service">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="title-area">
-            <h2 class="title">{{Mision[5].contw_descripcion}}</h2>
-            <span class="line"></span>
-            <p>{{Mision[24].contw_descripcion}}</p>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="service-content">
+    <!-- Start Service -->
+    <section id="service">
+        <div class="container">
             <div class="row">
-              <!-- Start single service -->
-              <div class="col-md-4 col-sm-6">
-                <div class="single-service wow zoomIn">
-                  <i class="fa fa-shopping-cart service-icon"></i>
-                  <h4 class="service-title">{{Mision[25].contw_descripcion}}</h4>
-                  <p>
-                    {{Mision[26].contw_descripcion}}
-                  </p>
+                <div class="col-md-12">
+                    <div class="title-area">
+                        <h2 class="title">{{Mision[5].contw_descripcion}}</h2>
+                        <span class="line"></span>
+                        <p>{{Mision[24].contw_descripcion}}</p>
+                    </div>
                 </div>
-              </div>
-              <!-- End single service -->
-              <!-- Start single service -->
-              <div class="col-md-4 col-sm-6">
-                <div class="single-service wow zoomIn">
-                  <i class="fa fa-rocket service-icon"></i>
-                  <h4 class="service-title">{{Mision[27].contw_descripcion}}</h4>
-                  <p>
-                    {{Mision[28].contw_descripcion}}
-                  </p>
+                <div class="col-md-12">
+                    <div class="service-content">
+                        <div class="row">
+                            <!-- Start single service -->
+                            <div class="col-md-4 col-sm-6">
+                                <div class="single-service wow zoomIn">
+                                    <i class="fa fa-shopping-cart service-icon"></i>
+                                    <h4 class="service-title">{{Mision[25].contw_descripcion}}</h4>
+                                    <p>
+                                        {{Mision[26].contw_descripcion}}
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- End single service -->
+                            <!-- Start single service -->
+                            <div class="col-md-4 col-sm-6">
+                                <div class="single-service wow zoomIn">
+                                    <i class="fa fa-rocket service-icon"></i>
+                                    <h4 class="service-title">{{Mision[27].contw_descripcion}}</h4>
+                                    <p>
+                                        {{Mision[28].contw_descripcion}}
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- End single service -->
+                            <!-- Start single service -->
+                            <div class="col-md-4 col-sm-6">
+                                <div class="single-service wow zoomIn">
+                                    <i class="fa fa-desktop service-icon"></i>
+                                    <h4 class="service-title">{{Mision[29].contw_descripcion}}</h4>
+                                    <p>
+                                        {{Mision[41].contw_descripcion}}
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- End single service -->
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <!-- End single service -->
-              <!-- Start single service -->
-              <div class="col-md-4 col-sm-6">
-                <div class="single-service wow zoomIn">
-                  <i class="fa fa-desktop service-icon"></i>
-                  <h4 class="service-title">{{Mision[29].contw_descripcion}}</h4>
-                  <p>
-                  {{Mision[41].contw_descripcion}}
-                  </p>
-                </div>
-              </div>
-              <!-- End single service -->
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Service -->
+    </section>
+    <!-- End Service -->
 
 
-  <!-- Start Feature -->
-  <section id="feature">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="title-area">
-            <h2 class="title">{{Mision[6].contw_descripcion}}</h2>
-            <span class="line"></span>
-            <p>
-              {{Mision[30].contw_descripcion}}
-            </p>
-            <br>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="clients-brand-area">
-            <ul class="clients-brand-slide">
-              <li class="col-md-3">
-                <div class="single-brand">
-                  <img src="assets/images/amazon.png" alt="img">
+    <!-- Start Feature -->
+    <section id="feature">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title-area">
+                        <h2 class="title">{{Mision[6].contw_descripcion}}</h2>
+                        <span class="line"></span>
+                        <p>
+                            {{Mision[30].contw_descripcion}}
+                        </p>
+                        <br>
+                    </div>
                 </div>
-              </li>
-              <li class="col-md-3">
-                <div class="single-brand">
-                  <img src="assets/images/discovery.png" alt="img">
+                <div class="col-md-12">
+                    <div class="clients-brand-area">
+                        <ul class="clients-brand-slide">
+                            <li class="col-md-3">
+                                <div class="single-brand">
+                                    <img src="assets/images/amazon.png" alt="img">
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="single-brand">
+                                    <img src="assets/images/discovery.png" alt="img">
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="single-brand">
+                                    <img src="assets/images/envato.png" alt="img">
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="single-brand">
+                                    <img src="assets/images/tuenti.png" alt="img">
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="single-brand">
+                                    <img src="assets/images/amazon.png" alt="img">
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="single-brand">
+                                    <img src="assets/images/discovery.png" alt="img">
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="single-brand">
+                                    <img src="assets/images/envato.png" alt="img">
+                                </div>
+                            </li>
+                            <li class="col-md-3">
+                                <div class="single-brand">
+                                    <img src="assets/images/tuenti.png" alt="img">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-              </li>
-              <li class="col-md-3">
-                <div class="single-brand">
-                  <img src="assets/images/envato.png" alt="img">
-                </div>
-              </li>
-              <li class="col-md-3">
-                <div class="single-brand">
-                  <img src="assets/images/tuenti.png" alt="img">
-                </div>
-              </li>
-               <li class="col-md-3">
-                <div class="single-brand">
-                  <img src="assets/images/amazon.png" alt="img">
-                </div>
-              </li>
-              <li class="col-md-3">
-                <div class="single-brand">
-                  <img src="assets/images/discovery.png" alt="img">
-                </div>
-              </li>
-              <li class="col-md-3">
-                <div class="single-brand">
-                  <img src="assets/images/envato.png" alt="img">
-                </div>
-              </li>
-              <li class="col-md-3">
-                <div class="single-brand">
-                  <img src="assets/images/tuenti.png" alt="img">
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Feature -->
-
-
-  <!-- Start Testimonial section -->
-  <section id="testimonial">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="title-area">
-                <h2 class="title">{{Mision[31].contw_descripcion}}</h2>
-                <span class="line"></span>
-              </div>
             </div>
-            <div class="col-md-12">
-              <!-- Start testimonial slider -->
-              <div class="testimonial-slider">
-                <!-- Start single slider -->
-                <div class="single-slider">
-                  <div class="testimonial-img">
-                    <img src="assets/images/testi1.jpg" alt="testimonial image">
-                  </div>
-                  <div class="testimonial-content">
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                    <h6>Bernice Neumann, <span>Designer</span></h6>
-                  </div>
-                </div>
-                <!-- Start single slider -->
-                <div class="single-slider">
-                  <div class="testimonial-img">
-                    <img src="assets/images/testi3.jpg" alt="testimonial image">
-                  </div>
-                  <div class="testimonial-content">
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                    <h6>John Dow, <span>CEO</span></h6>
-                  </div>
-                </div>
-                <!-- Start single slider -->
-                <div class="single-slider">
-                  <div class="testimonial-img">
-                    <img src="assets/images/testi2.jpg" alt="testimonial image">
-                  </div>
-                  <div class="testimonial-content">
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                    <h6>Michel, <span>Developer</span></h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-        <div class="col-md-6"></div>
-      </div>
-    </div>
-  </section>
-  <!-- End Testimonial section -->
+    </section>
+    <!-- End Feature -->
 
 
-  <!-- Start contact section  -->
-  <section id="contact">
-     <div class="container">
-       <div class="row">
-         <div class="col-md-12">
-           <div class="title-area">
-              <h2 class="title">{{Mision[32].contw_descripcion}}</h2>
-              <span class="line"></span>
-              <p>
-                {{Mision[33].contw_descripcion}}
-              </p>
+    <!-- Start Testimonial section -->
+    <section id="testimonial">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="title-area">
+                                <h2 class="title">{{Mision[31].contw_descripcion}}</h2>
+                                <span class="line"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <!-- Start testimonial slider -->
+                            <div class="testimonial-slider">
+                                <!-- Start single slider -->
+                                <div class="single-slider">
+                                    <div class="testimonial-img">
+                                        <img src="assets/images/testi1.jpg" alt="testimonial image">
+                                    </div>
+                                    <div class="testimonial-content">
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                        <h6>Bernice Neumann, <span>Designer</span></h6>
+                                    </div>
+                                </div>
+                                <!-- Start single slider -->
+                                <div class="single-slider">
+                                    <div class="testimonial-img">
+                                        <img src="assets/images/testi3.jpg" alt="testimonial image">
+                                    </div>
+                                    <div class="testimonial-content">
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                        <h6>John Dow, <span>CEO</span></h6>
+                                    </div>
+                                </div>
+                                <!-- Start single slider -->
+                                <div class="single-slider">
+                                    <div class="testimonial-img">
+                                        <img src="assets/images/testi2.jpg" alt="testimonial image">
+                                    </div>
+                                    <div class="testimonial-content">
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                        <h6>Michel, <span>Developer</span></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
             </div>
-         </div>
-         <div class="col-md-12">
-           <div class="cotact-area">
-             <div class="row">
-               <div class="col-md-4">
-                 <div class="contact-area-left">
-                   <h4>{{Mision[34].contw_descripcion}}</h4>
-                   <address class="single-address">
+        </div>
+    </section>
+    <!-- End Testimonial section -->
+
+
+    <!-- Start contact section  -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title-area">
+                        <h2 class="title">{{Mision[32].contw_descripcion}}</h2>
+                        <span class="line"></span>
+                        <p>
+                            {{Mision[33].contw_descripcion}}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="cotact-area">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="contact-area-left">
+                                    <h4>{{Mision[34].contw_descripcion}}</h4>
+                                    <address class="single-address">
                      <p>{{Mision[35].contw_descripcion}}</p>
                      <p>{{Mision[36].contw_descripcion}}</p>
                      <p>{{Mision[37].contw_descripcion}}</p>
                    </address>
-                   <div class="footer-right contact-social">
-                      <a href="index.html"><i class="fa fa-facebook"></i></a>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                      <a href="#"><i class="fa fa-google-plus"></i></a>
-                      <a href="#"><i class="fa fa-linkedin"></i></a>
-                      <a href="#"><i class="fa fa-pinterest"></i></a>
+                                    <div class="footer-right contact-social">
+                                        <a href="index.html"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="contact-area-right">
+                                    <form action="" class="comments-form contact-form">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Tu Nombre">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="E-mail">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Asunto">
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea placeholder="Comentario" rows="3" class="form-control"></textarea>
+                                        </div>
+                                        <button class="comment-btn">{{Mision[38].contw_descripcion}}</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                 </div>
-               </div>
-               <div class="col-md-8">
-                 <div class="contact-area-right">
-                   <form action="" class="comments-form contact-form">
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Tu Nombre">
-                    </div>
-                    <div class="form-group">
-                      <input type="email" class="form-control" placeholder="E-mail">
-                    </div>
-                     <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Asunto">
-                    </div>
-                    <div class="form-group">
-                      <textarea placeholder="Comentario" rows="3" class="form-control"></textarea>
-                    </div>
-                    <button class="comment-btn">{{Mision[38].contw_descripcion}}</button>
-                  </form>
-                 </div>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-  </section>
-  <!-- End contact section  -->
-
-  <!-- Start google map -->
-  <section id="google-map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d232.57427410676!2d-101.68788316898258!3d21.14489996128182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1467401198443" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-  </section>
-  <!-- End google map -->
-
-
-  <!-- Start subscribe us -->
-  <section id="subscribe">
-    <div class="subscribe-overlay">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="subscribe-area">
-              <h2 class="wow fadeInUp">{{Mision[39].contw_descripcion}}</h2>
-              <form action="" class="subscrib-form wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
-                <input type="text" placeholder="Ingresa tu E-mail..">
-                <button class="subscribe-btn" type="submit">{{Mision[40].contw_descripcion}}</button>
-              </form>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- End subscribe us -->
+    </section>
+    <!-- End contact section  -->
 
-  <!-- Start footer -->
-  <footer id="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-sm-6">
-          <div class="footer-left">
-            <p></p>
-          </div>
+    <!-- Start google map -->
+    <section id="google-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d232.57427410676!2d-101.68788316898258!3d21.14489996128182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1467401198443" width="100%" height="400" frameborder="0" style="border:0"
+            allowfullscreen></iframe>
+    </section>
+    <!-- End google map -->
+
+
+    <!-- Start subscribe us -->
+    <section id="subscribe">
+        <div class="subscribe-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="subscribe-area">
+                            <h2 class="wow fadeInUp">{{Mision[39].contw_descripcion}}</h2>
+                            <form action="" class="subscrib-form wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
+                                <input type="text" placeholder="Ingresa tu E-mail..">
+                                <button class="subscribe-btn" type="submit">{{Mision[40].contw_descripcion}}</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 col-sm-6">
-          <div class="footer-right">
-            <a href="index.html"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-google-plus"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-pinterest"></i></a>
-          </div>
+    </section>
+    <!-- End subscribe us -->
+
+    <!-- Start footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="footer-left">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="footer-right">
+                        <a href="index.html"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div id="response">
+
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
-  <!-- End footer -->
+    </footer>
+    <!-- End footer -->
 
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <!-- Bootstrap -->
-  <script src="assets/js/bootstrap.js"></script>
-  <!-- Slick Slider -->
-  <script type="text/javascript" src="assets/js/slick.js"></script>
-  <!-- mixit slider -->
-  <script type="text/javascript" src="assets/js/jquery.mixitup.js"></script>
-  <!-- Add fancyBox -->
-  <script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
- <!-- counter -->
-  <script src="assets/js/waypoints.js"></script>
-  <script src="assets/js/jquery.counterup.js"></script>
-  <!-- Wow animation -->
-  <script type="text/javascript" src="assets/js/wow.js"></script>
-  <!-- progress bar   -->
-  <script type="text/javascript" src="assets/js/bootstrap-progressbar.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!-- Slick Slider -->
+    <script type="text/javascript" src="assets/js/slick.js"></script>
+    <!-- mixit slider -->
+    <script type="text/javascript" src="assets/js/jquery.mixitup.js"></script>
+    <!-- Add fancyBox -->
+    <script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
+    <!-- counter -->
+    <script src="assets/js/waypoints.js"></script>
+    <script src="assets/js/jquery.counterup.js"></script>
+    <!-- Wow animation -->
+    <script type="text/javascript" src="assets/js/wow.js"></script>
+    <!-- progress bar   -->
+    <script type="text/javascript" src="assets/js/bootstrap-progressbar.js"></script>
 
 
-  <!-- Custom js -->
-  <script type="text/javascript" src="assets/js/custom.js"></script>
+    <!-- Custom js -->
+    <script type="text/javascript" src="assets/js/custom.js"></script>
 
-  <script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event) {
-				event.preventDefault();
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event) {
+                event.preventDefault();
 
-				$('html,body').animate({
-					scrollTop: $(this.hash).offset().top - 90
-				}, 1000);
-			});
-		});
-	</script>
-  </body>
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top - 90
+                }, 1000);
+            });
+        });
+    </script>
+
+
+
+</body>
+
 </html>
