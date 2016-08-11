@@ -1,0 +1,23 @@
+# Archivo de Configuración
+php_value auto_prepend_file "/Applications/MAMP/htdocs/PP-Pecas/DuckTech/config.php"
+
+# enable basic rewriting
+RewriteEngine on
+
+# enable symbolic links
+Options +FollowSymLinks
+
+
+# set the default language
+DefaultLanguage en-US
+
+
+# pass the default character set
+AddDefaultCharset utf-8
+
+
+# disable the server signature
+ServerSignature Off
+
+# set the server timezone
+SetEnv TZ America/Mexico_City

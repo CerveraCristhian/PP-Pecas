@@ -1,3 +1,9 @@
+<?php
+require_once $databaseDirectory;
+sesionvalida();
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,7 +64,7 @@
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          
+
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -115,7 +121,7 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
-     
+
 
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->

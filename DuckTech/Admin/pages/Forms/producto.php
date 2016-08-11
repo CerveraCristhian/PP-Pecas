@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php require_once $databaseDirectory;sesionvalida(); ?><!DOCTYPE html>
 <html ng-app="productoApp" ng-controller="productoController">
 <head>
   <meta charset="utf-8">

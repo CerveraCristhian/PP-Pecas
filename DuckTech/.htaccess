@@ -1,0 +1,66 @@
+
+# Archivo de Configuración
+php_value auto_prepend_file "/Applications/MAMP/htdocs/PP-Pecas/DuckTech/config.php"
+
+# 00000000 CONFIGURACIONES DE SERVIDOR 00000000
+# set the default language
+DefaultLanguage en-US
+
+# pass the default character set
+AddDefaultCharset utf-8
+
+# set the server timezone
+SetEnv TZ America/Mexico_City
+
+# enable basic rewriting
+RewriteEngine on
+Options +FollowSymLinks
+
+
+# 00000000 CONFIGURACIONES DE SEGURIDAD 00000000
+# CHMOD to 644
+# secure htaccess file
+
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh|sql)$">
+ Order Allow,Deny
+ Deny from all
+</FilesMatch>
+
+# disable directory browsing
+Options All -Indexes
+
+# prevent folder listing
+IndexIgnore *
+
+
+
+
+
+
+
+
+
+
+RewriteEngine On
+
+RewriteBase /
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^ Pruebas/testhtaccess/index.php [QSA,L]
+#RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+
+
+# Append file to bottom of page
+#php_value auto_append_file "./append.php"
+
+
+# Append file to bottom of page
+#"INVALID LINE HERE"
+
+# RewriteEngine On
+
+# RewriteBase /
+
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^ tem/index.php [QSA,L]
