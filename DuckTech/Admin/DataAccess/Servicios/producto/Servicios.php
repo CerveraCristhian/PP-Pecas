@@ -4,10 +4,7 @@
 * Representa el la estructura de las metas
 * almacenadas en la base de datos
 */
-define('DS',DIRECTORY_SEPARATOR);
-require_once $_SERVER["DOCUMENT_ROOT"].'/PP-Pecas/DuckTech/Admin/DataAccess/Database.php';
-//echo $_SERVER["DOCUMENT_ROOT"].DS.'PP-Pecas/DuckTech/Admin/DataAccess/Database.php';
-
+require_once $databaseDirectory;
 
 class Meta
 {
