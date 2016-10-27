@@ -1,4 +1,3 @@
-
 # Archivo de Configuración
 php_value auto_prepend_file "/Applications/MAMP/htdocs/PP-Pecas/DuckTech/config.php"
 
@@ -15,6 +14,7 @@ SetEnv TZ America/Mexico_City
 # enable basic rewriting
 RewriteEngine on
 Options +FollowSymLinks
+AddType application/x-httpd-php .html .htm
 
 
 # 00000000 CONFIGURACIONES DE SEGURIDAD 00000000

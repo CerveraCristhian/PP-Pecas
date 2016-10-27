@@ -1,3 +1,4 @@
+<?php require_once $databaseDirectory;sesionvalidaUsuarioWeb(); ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="cartApp" ng-controller="cartController">
 
@@ -103,7 +104,11 @@
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-6">
                         <div class="header-login">
-                            <a class="login modal-form" data-target="#login-form" data-toggle="modal" href="#">Ingresa / Registro</a>
+                            <?php if(!empty($_SESSION['usuarioWeb'])){?>
+                                <a class="login modal-form"  href="logout.php">Cerrar Sesión</a>
+                            <?php }else { ?>
+                                <a class="login modal-form"  href="../../Admin/indexuw.php">{{Mision[2].contw_descripcion}}</a>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -192,7 +197,7 @@
                     </button>
                     <!-- LOGO -->
                     <!-- TEXT BASED LOGO -->
-                    <a class="navbar-brand" href="index.html">DruckTech</a>
+                    <a class="navbar-brand" style="padding-top: 0px;margin-top: 0px" href="index.html"><img style= 'width: 200px;height: 100px;padding: 0px 0px;' src="assets/images/logopng.png" alt="logo"></a>
                     <!-- IMG BASED LOGO  -->
                     <!-- <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="logo"></a> -->
                 </div>

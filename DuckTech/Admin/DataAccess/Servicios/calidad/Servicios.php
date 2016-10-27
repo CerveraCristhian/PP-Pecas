@@ -4,7 +4,8 @@
 * Representa el la estructura de las metas
 * almacenadas en la base de datos
 */
-require_once $databaseDirectory;sesionvalida();;
+require_once $databaseDirectory;
+sesionvalida();
 
 class Meta
 {

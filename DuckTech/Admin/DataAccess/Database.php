@@ -2,6 +2,7 @@
 /**
 * Clase que envuelve una instancia de la clase PDO
 * para el manejo de la base de datos
+* <?php require_once $databaseDirectory;sesionvalida(); ?><!DOCTYPE html>
 */
 
 require_once 'mysql_login.php';
@@ -13,7 +14,64 @@ function encriptar($password){
     //password_verify($password, $hash)
 }
 
+function esRFC($rfc){
+    if (preg_match('/^[A-Z]{3,4}\d{6}[A-Z]{3}$/', $rfc)) {
+        return true;
+    }else{
+        return false;
+    }
+}
+function mensaje($arregloErrores, $mensajeArriba, $mensajeAbajo,$tipo){
+    switch ($tipo) {
+        case 0:
+        echo "<div class=\"alert alert-success\" role=\"alert\">";
+        $aviso= "¡Éxito!";
+        break;
+        case 1:
+        echo "<div class=\"alert alert-info\" role=\"alert\">";
+        $aviso= "¡Nota!";
+        break;
+        case 2:
+        echo "<div class=\"alert alert-warning\" role=\"alert\">";
+        $aviso= "¡Advertencia!";
+        break;
+        case 3:
+        echo "<div class=\"alert alert-danger\" role=\"alert\">";
+        $aviso= "¡Error!";
+        break;
+    }
+    echo "<a href=\"#\" class=\"close\" data-dismiss=\"alert\">&times;</a>
+    <strong>".$aviso."</strong> " .  $mensajeArriba;
+    foreach ($arregloErrores as $mensaje) {
+        if(is_array($mensaje)){
+            echo "<br>-> ";
+            foreach ($mensaje as  $value) {
+                echo $value .",";
+            }
+        }else{
+            echo "<br>-> " . $mensaje;
+        }
 
+    }
+    echo "<br><strong> ".$mensajeAbajo . "</strong>
+    </div>";
+}
+function preregistro($clie_nombre, $clie_amaterno, $clie_apaterno, $clie_email, $clie_emailrazon, $clie_fechaingresosistema, $clie_razonsocial, $clie_observaciones, $clie_rfc, $clie_fax){
+    //$clie_clienteid, $clie_nombre, $clie_amaterno, $clie_apaterno, $clie_email, $clie_emailrazon, $clie_fechaingresosistema, $clie_razonsocial, $clie_observaciones, $clie_rfc, $clie_fax
+    $sql = "INSERT INTO `clientes`(`clie_nombre`, `clie_amaterno`, `clie_apaterno`, `clie_email`, `clie_emailrazon`, `clie_fechaingresosistema`, `clie_razonsocial`, `clie_observaciones`, `clie_rfc`, `clie_fax`) VALUES (?,?,?,?,?,?,?,?,?,?)";
+    $params = array($clie_nombre, $clie_amaterno, $clie_apaterno, $clie_email, $clie_emailrazon, $clie_fechaingresosistema, $clie_razonsocial, $clie_observaciones, $clie_rfc, $clie_fax);
+    try{
+        ///TODO
+        $stmt = Database::getInstance()->getDb()->prepare($sql);
+        $result = $stmt->execute($params);
+        return Database::getInstance()->getDb()->lastInsertId();
+    }
+    catch(PDOException $ex){
+        echo $ex->getMessage();
+        return false;
+        die("Error de consulta a la Base de Datos");
+    }
+}
 function login($id, $pass){
     $login_ok = false;
     $_SESSION['usuario']=false;
@@ -36,20 +94,80 @@ function login($id, $pass){
             unset($row['user_password']);
             unset($row['usr_salt']);
             $_SESSION['usuario'] = $row;
-            var_dump($row);
+            return true;
+        }
+    }
+    return $login_ok;
+}
+function loginUsuarioWeb($id, $pass){
+    $login_ok = false;
+    $_SESSION['usuario']=false;
+    $consulta =
+    "SELECT `usrw_usuarioid`, `usrw_nombre`, `usrw_password`, `usrw_rolid`, `usrw_salt`, `usrw_activo`, `usrw_descuento`, `Clientes_clie_clienteid` FROM `usuariosweb` WHERE `usrw_nombre` = :id";
+    $query_params = array(':id' => $id);
+    try{
+        ///TODO
+        $stmt = Database::getInstance()->getDb()->prepare($consulta);
+        $result = $stmt->execute($query_params);
+    }
+    catch(PDOException $ex){
+        echo $ex->getMessage();
+        return false;
+        die("Error de consulta a la Base de Datos");
+    }
+    $row = $stmt->fetch();
+    if($row){
+        if($pass === $row['usrw_password'] AND $row['usrw_activo'] > 0  ){
+            unset($row['usrw_password']);
+            unset($row['usrw_salt']);
+            $_SESSION['usuarioWeb'] = $row;
             return true;
         }
     }
     return $login_ok;
 }
 function sesionvalida(){
-    if(empty($_SESSION['usuario']))
-    {
-        header("Location: index.php");
-        die("Redirecting to index.php");
+
+    if(empty($_SESSION['usuario'])){
+        $path = 'index.php';
+        if (file_exists($path)) {
+            header("Location: ".$path);
+            die("Bad Session");
+        }
+        $path = '../index.php';
+        if (file_exists($path)) {
+            header("Location: ".$path);
+            die("Bad Session");
+        }
+        $path = '../../index.php';
+        if (file_exists($path)) {
+            header("Location: ".$path);
+            die("Bad Session");
+        }
     }
 
 }
+function sesionvalidaUsuarioWeb(){
+    if(empty($_SESSION['usuarioWeb'])){
+        $path = 'indexuw.php';
+        if (file_exists($path)) {
+            header("Location: ".$path);
+            die("Bad Session");
+        }
+        $path = '../indexuw.php';
+        if (file_exists($path)) {
+            header("Location: ".$path);
+            die("Bad Session");
+        }
+        $path = '../../indexuw.php';
+        if (file_exists($path)) {
+            header("Location: ".$path);
+            die("Bad Session");
+        }
+    }
+
+}
+
 class Database
 {
 
