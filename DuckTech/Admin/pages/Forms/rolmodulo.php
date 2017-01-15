@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php require_once $databaseDirectory;sesionvalida(); ?><!DOCTYPE html>
 <html ng-app="rolmoduloApp" ng-controller="rolmoduloController">
 <head>
   <meta charset="utf-8">

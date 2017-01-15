@@ -40,7 +40,7 @@ Tags: light, white, single page, multipurpose, multi page, custom-colors, Bootst
 /* BASIC TYPOGRAPHY */
 /*--------------------*/
 
-body,html{
+html{
 
 }
 
@@ -1532,10 +1532,11 @@ img{
 
 #footer{
   background-color: #171717;
-  display: inline;
   float: left;
   padding: 25px 0;
   width: 100%;
+	position: relative;
+	bottom:0;
 }
 
 .footer-left{

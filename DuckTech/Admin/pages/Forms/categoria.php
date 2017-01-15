@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php require_once $databaseDirectory;sesionvalida(); ?><!DOCTYPE html>
 <html ng-app="categoriaApp" ng-controller="categoriaController">
 <head>
   <meta charset="utf-8">
@@ -144,7 +144,7 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
        <li>
-          <a href="../../index.html">
+          <a href="../../index.php">
             <i class="fa fa-tachometer"></i> <span>Inicio</span>
 
           </a>
@@ -155,9 +155,9 @@
           </a>
           <ul class="treeview-menu">
 
-            <li ><a href="roles.html"><i class="fa fa-circle-o"></i> Roles</a></li>
-            <li><a href="permisos.html"><i class="fa fa-circle-o"></i> Permisos</a></li>
-              <li><a href="rolpermiso.html"><i class="fa fa-circle-o"></i> Asignar Permisos </a></li>
+            <li ><a href="roles.php"><i class="fa fa-circle-o"></i> Roles</a></li>
+            <li><a href="permisos.php"><i class="fa fa-circle-o"></i> Permisos</a></li>
+              <li><a href="rolpermiso.php"><i class="fa fa-circle-o"></i> Asignar Permisos </a></li>
           </ul>
         </li>
         <li class="active treeview">
@@ -165,14 +165,14 @@
             <i class="fa fa-th"></i> <span>Productos</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="marca.html"><i class="fa fa-circle-o"></i> Marcas</a></li>
-            <li><a href="medida.html"><i class="fa fa-circle-o"></i> Medida</a></li>
-            <li><a href="colores.html"><i class="fa fa-circle-o"></i> Colores</a></li>
-            <li><a href="calidad.html"><i class="fa fa-circle-o"></i> Calidad</a></li>
-            <li><a href="moneda.html"><i class="fa fa-circle-o"></i> Moneda</a></li>
-            <li class="active"><a href="categoria.html"><i class="fa fa-circle-o"></i> Categoria</a></li>
-            <li><a href="subcategoria.html"><i class="fa fa-circle-o"></i> SubCategoria</a></li>
-            <li><a href="producto.html"><i class="fa fa-circle-o"></i> Producto</a></li>
+            <li><a href="marca.php"><i class="fa fa-circle-o"></i> Marcas</a></li>
+            <li><a href="medida.php"><i class="fa fa-circle-o"></i> Medida</a></li>
+            <li><a href="colores.php"><i class="fa fa-circle-o"></i> Colores</a></li>
+            <li><a href="calidad.php"><i class="fa fa-circle-o"></i> Calidad</a></li>
+            <li><a href="moneda.php"><i class="fa fa-circle-o"></i> Moneda</a></li>
+            <li class="active"><a href="categoria.php"><i class="fa fa-circle-o"></i> Categoria</a></li>
+            <li><a href="subcategoria.php"><i class="fa fa-circle-o"></i> SubCategoria</a></li>
+            <li><a href="producto.php"><i class="fa fa-circle-o"></i> Producto</a></li>
           </ul>
         </li>
 

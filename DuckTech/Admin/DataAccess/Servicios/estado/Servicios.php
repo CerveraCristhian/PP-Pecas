@@ -4,7 +4,7 @@
 * Representa el la estructura de las metas
 * almacenadas en la base de datos
 */
-require_once '../../Database.php';
+require_once $databaseDirectory;
 
 class Meta
 {

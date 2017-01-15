@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php require_once $databaseDirectory;sesionvalida(); ?><!DOCTYPE html>
 <html ng-app="usuariosApp" ng-controller="usuariosController">
 <head>
   <meta charset="utf-8">
@@ -50,7 +50,7 @@
     <section class="content-header">
       <h1>
         usuarios
-       
+
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -64,11 +64,11 @@
 
       <!-- Default box -->
       <div class="box">
-        
+
         <div class="box-body">
 <form role="form" name="formulario">
 <div class="box-body">
-                   
+
 <div class="form-group">
 <label for="Roles_rol_rolid">Rol</label>
   <select id="cmbRol" class="form-control"  ng-model="Roles_rol_rolid" ng-options="rol.rol_nombre for rol in roles.roles"> </select>
@@ -77,8 +77,8 @@
 
 
 </div>
-                       
-                       
+
+
 
 <div class="box-footer">
 <button class="btn btn-primary" ng-click="Guardar()">Guardar</button>
@@ -95,11 +95,11 @@
 <th>Roles_rol_rolid</th>
 <th>user_usuarioid</th>
 
-                            
+
 </tr>
 <tr>
-                           
-                           
+
+
 <form >
 <tr ng-repeat="item in usuarios.usuarios | filter:test">
 
@@ -108,7 +108,7 @@
 <td>{{item.Roles_rol_rolid}}</td>
 <td>{{item.user_usuarioid}}</td>
 
-                             
+
 
 <td>
 <button ng-click="Editar(item)" class="btn btn-primary" >Editar</button>
@@ -119,13 +119,13 @@
 
 </tr>
 </form>
-    
+
 </table>
 </div>
 
         </div>
         <!-- /.box-body -->
-       
+
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->
@@ -135,7 +135,7 @@
   </div>
   <!-- /.content-wrapper -->
 
-  
+
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

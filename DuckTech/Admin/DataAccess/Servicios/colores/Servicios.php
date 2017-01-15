@@ -4,9 +4,7 @@
 * Representa el la estructura de las metas
 * almacenadas en la base de datos
 */
-define('DS',DIRECTORY_SEPARATOR);
-require_once $_SERVER["DOCUMENT_ROOT"].'/'.'Git/testCom/DuckTech/Admin/DataAccess/Database.php';
-
+require_once $databaseDirectory;
 
 class Meta
 {

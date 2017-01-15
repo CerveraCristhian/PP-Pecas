@@ -1,11 +1,13 @@
-<?php  
+<?php
 session_start();
 header('Content-type: application/json');
 require_once 'directoryservices.php';
 
 
+
 $objDatos = json_decode(file_get_contents("php://input"));
 $method = $objDatos->method;
+
 switch ($method) {
 	//Metodos de Calidad
 
@@ -20,7 +22,7 @@ switch ($method) {
 	require $wscalidad;
 		echo ServiciosCalidad::SelectAllcalidad($objDatos);
 		break;
-    		
+
 
 
 	/**
@@ -123,7 +125,7 @@ switch ($method) {
 	* selectCategoriaSubCategoria
 	*
 	* Parametros de entrada: Ninguno
-	* Descripcion: Obtiene detalles de Categoria con SubCategoria 
+	* Descripcion: Obtiene detalles de Categoria con SubCategoria
 	* Devuelve : Lista de Tuplas
 	*/
 	case 'selectCategoriaSubCategoria':
@@ -131,7 +133,7 @@ switch ($method) {
 
 		echo ServiciosCategoria::CategoriaSubCategoria($objDatos);
 		break;
-	//Metodos de Categoria		
+	//Metodos de Categoria
 
 //===================================================================
 
@@ -192,7 +194,7 @@ switch ($method) {
 
 
 	//=============================================================================
-	
+
 
 
 	//Metodos Permisos
@@ -215,7 +217,7 @@ switch ($method) {
 	* Parametros de entrada: $perm_nombre
 	* Descripcion: Inserta una nueva tupla en la tabla "Permisos"
 	* Devuelve : Estados de la consulta
-	*/	
+	*/
 	case 'insertPermisos':
 	require $wspermisos;
 		echo ServiciosPermisos::InsertPermisos($objDatos);
@@ -241,7 +243,7 @@ switch ($method) {
 	* Parametros de entrada: $perm_permisoid
 	* Descripcion: Elimina tupla de la tabla "Permisos"
 	* Devuelve : Estados de la consulta
-	*/		
+	*/
 	case 'deletePermisos':
 	require $wspermisos;
 		echo ServiciosPermisos::DeletePermisos($objDatos);
@@ -249,7 +251,7 @@ switch ($method) {
 	//Metodos Permisos
 
 
-//==========================================================================		
+//==========================================================================
 	//Metodos RolPermisos
 	/**
 	* selectRolPermisos
@@ -301,7 +303,7 @@ switch ($method) {
 	require $wsrolpermiso;
 		echo ServiciosRolPermisos::DeleteRolPermisos($objDatos);
 		break;
-	//Metodos RolPermisos	
+	//Metodos RolPermisos
 
 
 //================================================
@@ -435,7 +437,7 @@ switch ($method) {
 
 //=================================================================================
 
-    //Metodo Medida	
+    //Metodo Medida
 
 	/**
 	* selectMedida
@@ -493,7 +495,7 @@ switch ($method) {
 
 //=================================================================================
 
-    //Metodo Colores	
+    //Metodo Colores
 
 	/**
 	* selectColores
@@ -548,7 +550,7 @@ switch ($method) {
 
 //=================================================================================
 
-    //Metodo Moneda	
+    //Metodo Moneda
 
 	/**
 	* selectMoneda
@@ -604,7 +606,7 @@ switch ($method) {
 
 //=================================================================================
 
-    //Metodo SubCategoria	
+    //Metodo SubCategoria
 
 	/**
 	* selectSubCategoria
@@ -671,7 +673,7 @@ switch ($method) {
 
 //=================================================================================
 
-    //Metodo Productos	
+    //Metodo Productos
 
 	/**
 	* selectProductos
@@ -960,7 +962,7 @@ switch ($method) {
     require $wsformas;
     echo Serviciosformas::SelectFormasbyModulo($objDatos);
     break;
-    
+
     /**
     * insertformas
     *
@@ -1156,7 +1158,7 @@ switch ($method) {
     */
     case 'insertusuariosweb':
     require $wsusuariosweb;
-    echo Serviciosusuariosweb::insertusuariosweb($objDatos);
+	echo Serviciosusuariosweb::insertusuariosweb($objDatos);
     break;
     /**
     * deleteusuariosweb
@@ -1179,6 +1181,10 @@ switch ($method) {
     case 'updateusuariosweb':
     require $wsusuariosweb;
     echo Serviciosusuariosweb::updateusuariosweb($objDatos);
+    break;
+    case 'registerCart':
+    require $wsregistercart;
+    echo Serviciosordencompra::insertordencompra($objDatos);
     break;
 
 

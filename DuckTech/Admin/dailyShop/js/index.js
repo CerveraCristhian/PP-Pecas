@@ -1,20 +1,27 @@
-var app = angular.module('categoriaApp', ['angular.filter','ng-mfb']   );
-app.controller('categoriaController', function($scope, $http,$window) {
-$scope.cate_nombre = null;
-$scope.cate_Activo = null;
-$scope.cate_fechacreacion = null;
-$scope.cate_fechamodificacion = null;
-$scope.cate_usuariocreacion = null;
-$scope.cate_usuariomodificacion = null;
-$scope.cate_categoriaid = null;
-$scope.categoria = [];
-$scope.productoid=null;
-$("#load").show();
-$http.post("../DataAccess/Servicios/categoria/ServiceCategoriaSubCategoria.php")
-.success(function(data) {
-$scope.categoria = data;
-})
-.error(function(error) {})
+var app = angular.module('categoriaApp', ['angular.filter', 'ng-mfb', 'ngStorage']);
+app.controller('categoriaController', function($scope, $http, $window,
+    $localStorage,
+    $sessionStorage) {
+    $scope.cate_nombre = null;
+    $scope.cate_Activo = null;
+    $scope.cate_fechacreacion = null;
+    $scope.cate_fechamodificacion = null;
+    $scope.cate_usuariocreacion = null;
+    $scope.cate_usuariomodificacion = null;
+    $scope.cate_categoriaid = null;
+    $scope.categoria = [];
+    $scope.productoid = null;
+    $scope.productoSeleccionado = null;
+    $scope.$storage = $localStorage;
+    $scope.$storage = $localStorage.$default({
+        x: []
+    });
+    $("#load").show();
+    $http.post("../DataAccess/Servicios/categoria/ServiceCategoriaSubCategoria.php")
+        .success(function(data) {
+            $scope.categoria = data;
+        })
+        .error(function(error) {})
 
     $scope.producto = [];
     $http.post("../DataAccess/Servicios/producto/ServiceSelectAllproducto.php")
@@ -25,48 +32,71 @@ $scope.categoria = data;
         .error(function(error) {})
 
 
-$scope.OnCategoriaClic = function(data)
-{
-var parametros = {
-Categoria_cate_categoriaid :data.subc_subcategoriaid
-}
-
-    $scope.producto = [];
-
-    $http.post("../DataAccess/Servicios/producto/ServiceSelectAllProductobyCategoria.php",parametros)
+        $scope.CargarTodos = function(){
+            $http.post("../DataAccess/Servicios/producto/ServiceSelectAllproducto.php")
         .success(function(data) {
+            $("#load").hide();
             $scope.producto = data;
-       
         })
         .error(function(error) {})
+        }
+
+    $scope.OnCategoriaClic = function(data) {
+        var parametros = {
+            Categoria_cate_categoriaid: data.subc_subcategoriaid
+        }
+
+        $scope.producto = [];
+
+        $http.post("../DataAccess/Servicios/producto/ServiceSelectAllProductobyCategoria.php", parametros)
+            .success(function(data) {
+                $scope.producto = data;
+
+            })
+            .error(function(error) {})
 
 
-}
+    }
 
 
+    $scope.AddToCart = function(data) {
 
-$scope.OnClickProducto = function(data)
-{
+        data.cantidad = 1;
+        $scope.$storage.x.push(data);
+        swal({
+            title: " ¡Añadido!",
+            text: "<img src='img/cart.gif' alt='Smiley face' height='300' width='300'>",
+            html: true
+        });
 
-$scope.productoid = data.prod_productoid;
-
- var parametros = {
-                idproducto: data.prod_productoid
-            }
-post("pass.php",parametros);
-
-}
-
-$scope.Estatus = function(){
+    }
 
 
-$window.location.href = '/Git/PP-Pecas/DuckTech/Admin/dailyShop/cart.html';
-}
+    $scope.productoDescripcion = function(data){
+            $scope.productoSeleccionado = data;
+    }
 
-$scope.Compra = function(){
+    $scope.OnClickProducto = function(data) {
 
-$window.location.href = '/Git/PP-Pecas/DuckTech/Admin/dailyShop/cart.html';
-}
+        $scope.productoid = data.prod_productoid;
+
+        var parametros = {
+            idproducto: data.prod_productoid
+        }
+        post("pass.php", parametros);
+
+    }
+
+    $scope.Estatus = function() {
+
+
+        $window.location.href = '/Git/PP-Pecas/DuckTech/Admin/dailyShop/cart.html';
+    }
+
+    $scope.Compra = function() {
+
+        $window.location.href = '/Git/PP-Pecas/DuckTech/Admin/dailyShop/cart.html';
+    }
 
     function post(path, params, method) {
         method = method || "post";
@@ -87,4 +117,3 @@ $window.location.href = '/Git/PP-Pecas/DuckTech/Admin/dailyShop/cart.html';
     }
 
 });
-

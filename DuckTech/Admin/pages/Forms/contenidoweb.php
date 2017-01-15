@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php require_once $databaseDirectory;sesionvalida(); ?><!DOCTYPE html>
 <html ng-app="contenidowebApp" ng-controller="contenidowebController">
 <head>
   <meta charset="utf-8">
@@ -42,7 +42,7 @@
 
   <ppc-header></ppc-header>
   <ppc-aside></ppc-aside>
- 
+
   <!-- =============================================== -->
 
   <!-- Content Wrapper. Contains page content -->
@@ -51,7 +51,7 @@
     <section class="content-header">
       <h1>
         contenidoweb
-       
+
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -77,7 +77,7 @@
         <div class="box-body">
 <form role="form" name="formulario">
 <div class="box-body">
-                   
+
 <div class="form-group">
 <label for="contw_descripcion">contw_descripcion</label><input type="text" class="form-control" name="contw_descripcion" id="contw_descripcion" placeholder="Capturar contw_descripcion" ng-model="contw_descripcion">
 <label for="contw_descripcioningles">contw_descripcioningles</label><input type="text" class="form-control" name="contw_descripcioningles" id="contw_descripcioningles" placeholder="Capturar contw_descripcioningles" ng-model="contw_descripcioningles">
@@ -85,8 +85,8 @@
 <label for="contw_contenidowebid">contw_contenidowebid</label><input type="text" class="form-control" name="contw_contenidowebid" id="contw_contenidowebid" placeholder="Capturar contw_contenidowebid" ng-model="contw_contenidowebid">
 
 </div>
-                       
-                       
+
+
 
 <div class="box-footer">
 <button class="btn btn-primary" ng-click="Guardar()">Guardar</button>
@@ -103,11 +103,11 @@
 <th>contw_clave</th>
 <th>contw_contenidowebid</th>
 
-                            
+
 </tr>
 <tr>
-                           
-                           
+
+
 <form >
 <tr ng-repeat="item in contenidoweb.contenidoweb | filter:test">
 
@@ -116,7 +116,7 @@
 <td>{{item.contw_clave}}</td>
 <td>{{item.contw_contenidowebid}}</td>
 
-                             
+
 
 <td>
 <button ng-click="Editar(item)" class="btn btn-primary" >Editar</button>
@@ -127,7 +127,7 @@
 
 </tr>
 </form>
-    
+
 </table>
 </div>
 

@@ -27,11 +27,26 @@ print json_encode(array(
 public static function insertordencompra($objDatos){
 $orco_usuariowebid = $objDatos->orco_usuariowebid;
 $orco_total = $objDatos->orco_total;
-$orco_fecha = $objDatos->orco_fecha;
+$orco_fecha = date('Y/m/d H:i:s');
 $orco_estatus = $objDatos->orco_estatus;
 $metas = Meta::Insertordencompra($orco_usuariowebid, $orco_total, $orco_fecha, $orco_estatus);
 if ($metas) {
 
+$lastid = $metas[0];
+
+$arreglin = $objDatos->detallesCompra;
+foreach ($arreglin as &$valor) {
+	$array = get_object_vars($valor);
+$detoc_ordencompraid = $lastid['idlast'];
+$detoc_productoid = $array['prod_productoid'];
+$detoc_preciounitario = $array['prod_precioestandar'];
+$detoc_cantidad = $array['cantidad'];
+$detoc_total = $array['preciocalculado'];
+$metas = Meta::Insertdetallesordencompra($detoc_ordencompraid, $detoc_productoid, $detoc_preciounitario, $detoc_cantidad, $detoc_total);
+ 
+}
+
+ 
 $datos["estado"] = 1;
 $datos["ordencompra"] = $metas;
 

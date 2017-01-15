@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Registro </title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="assets/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+    folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="assets/css/skins/_all-skins.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
+    <link rel="stylesheet" href="plugins/dragndrop/dragndropstyle.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body style="background-color:#444">
+    <!-- /.login-logo <span class="glyphicon glyphicon-user form-control-feedback"></span> -->
+    <a class="btn btn-danger btn-flat" href="../web/Intensely/index.html">Regresar</a>
+    <div class="login-box-body">
+        <div class="">
+            <img class="center" style='display: block;margin: auto;width: 300px;height: 150px;padding: 0px 0px;' src="../web/Intensely/assets/images/logopng.png" alt="logo"></a>
+        </div>
+        <div class="login-logo"><a><b>Formulario de Registro:</b> </a></div>
+
+        <form action="registrouw.html" method="post" id="form" accept-charset="utf-8">
+            <div class="form-group has-feedback col-md-3 ">
+                <p>Nombres:</p>
+                <input type="input" class="form-control" required name="nombres" id="nombres" placeholder="Nombres">
+            </div>
+
+            <div class="form-group has-feedback col-md-3 ">
+                <p>Apellido Paterno:</p>
+                <input type="input" class="form-control" required name="apaterno" id="apaterno" placeholder="Apellido Paterno">
+            </div>
+
+            <div class="form-group has-feedback col-md-3 ">
+                <p>Apellido Materno:</p>
+                <input type="input" class="form-control" required name="amaterno" id="amaterno" placeholder="Apellido Materno">
+            </div>
+
+            <div class="form-group has-feedback col-md-4 ">
+                <p>Correo electrónico:</p>
+                <input type="email" class="form-control" required name="email" id="email" placeholder="Correo electrónico">
+            </div>
+            <div class="form-group has-feedback col-md-4 ">
+                <p>Teléfono:</p>
+                <input type="input" class="form-control" required name="telefono" id="telefono" placeholder="Teléfono">
+            </div>
+            <!--
+            <div class="row"></div><p>Dirección:</p>
+
+            <div class="form-group has-feedback col-md-2 ">
+            <p>País:</p>
+            <input type="input" class="form-control" required name="pais" placeholder="País">
+        </div>
+        <div class="form-group has-feedback col-md-2 ">
+        <p>Estado:</p>
+        <input type="input" class="form-control" required name="estado" placeholder="Estado">
+    </div>
+    <div class="form-group has-feedback col-md-2 ">
+    <p>Ciudad:</p>
+    <input type="input" class="form-control" required name="ciudad" placeholder="Ciudad">
+</div>
+<div class="form-group has-feedback col-md-2 ">
+<p>Colonia:</p>
+<input type="input" class="form-control" required name="colonia" placeholder="Colonia">
+</div>
+<div class="form-group has-feedback col-md-2 ">
+<p>Calle:</p>
+<input type="input" class="form-control" required name="calle" placeholder="Calle">
+</div>
+<div class="form-group has-feedback col-md-2 ">
+<p>Número Exterior:</p>
+<input type="input" class="form-control" required name="nexterior" placeholder="Número Exterior">
+</div>
+<div class="form-group has-feedback col-md-2 ">
+<p>Número Interior:</p>
+<input type="input" class="form-control" required name="ninterior" placeholder="Número Interior">
+</div>
+<div class="form-group has-feedback col-md-2 ">
+<p>Código Postal:</p>
+<input type="input" class="form-control" required name="codigopostal" placeholder="Código Postal">
+</div>
+-->
+
+<div class="row"></div><p>Razón:</p>
+<div class="form-group has-feedback col-md-4 ">
+    <p>Razón Social:</p>
+    <input type="input" class="form-control" required name="razonsocial" id="razonsocial" placeholder="Razón Social">
+</div>
+<div class="form-group has-feedback col-md-4 ">
+    <p>Email Razón Social:</p>
+    <input type="input" class="form-control" required name="emailrs" id="emailrs" placeholder="Email Razón Social">
+</div>
+<div class="form-group has-feedback col-md-4 ">
+    <p>Cuenta:</p>
+    <input type="input" class="form-control" required name="cuenta" id="cuenta" placeholder="Cuenta">
+</div>
+<div class="form-group has-feedback col-md-4 ">
+    <p>Fax:</p>
+    <input type="input" class="form-control" required name="fax" id="fax" placeholder="Fax">
+</div>
+<div class="form-group has-feedback col-md-4 ">
+    <p>RFC:</p>
+    <input type="input" class="form-control" required name="rfc" id="rfc" placeholder="RFC" >
+</div>
+<div class="form-group has-feedback col-md-4 ">
+    <p>Régimen:</p>
+    <select class="" name="">
+        <option value="volvo">Físico</option>
+        <option value="saab">Moral</option>
+    </select>
+</div>
+<!--<div class="form-group has-feedback col-md-4 ">
+<p>Observaciones</p>
+<input type="input" class="form-control" required name="observaciones" placeholder="Observaciones">
+</div>-->
+<h4>Solicitamos el registro de alta de RFC:</h4>
+<input class="center" type="checkbox" name="terminos" required value="terminos"> Acepto los <a href="#">términos y cóndiciones.</a>
+<div class="content dragndrop">
+    <div id="drop-files" ondragover="return false">
+        Arrastre los documentos aquí
+    </div>
+
+    <div id="uploaded-holder">
+        <div id="dropped-files">
+            <div id="upload-button">
+                <a href="#" class="upload">Registrarme</a>
+                <a href="#" class="delete">Cancelar</a>
+                <span>0 Files</span>
+            </div>
+        </div>
+        <div id="extra-files">
+            <div class="number">
+                0
+            </div>
+            <div id="file-list">
+                <ul></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading">
+        <div id="loading-bar">
+            <div class="loading-color"> </div>
+        </div>
+        <div id="loading-content">¡Subiendo!</div>
+    </div>
+</div> <!--Drag n Drop-->
+</form>
+
+
+</div>
+<!-- /.login-box-body -->
+
+<!-- jQuery 2.2.3 -->
+<script src="plugins/jQuery/jQuery-2.2.0.min.js"></script>
+<script src="plugins/dragndrop/dragndrop.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<!-- iCheck -->
+
+
+
+</body>
+</html>

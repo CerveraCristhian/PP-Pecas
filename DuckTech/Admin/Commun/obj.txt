@@ -1,0 +1,1 @@
+{"method":"updateusuariosweb","usrw_nombre":"test","usrw_password":"test","usrw_rolid":"1","usrw_salt":"231","usrw_activo":"0","usrw_descuento":"0","Clientes_clie_clienteid":"2","usrw_usuarioid":"2"}
